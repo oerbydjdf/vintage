@@ -1,0 +1,42 @@
+<div class="basketComposition">
+    <div class="basketComposition__headerBasket headerBasket">
+        <div class="headerBasket__name">Корзина</div>
+        <div class="headerBasket__btnClear">Очистить</div>
+    </div>
+    <div class="basketComposition__deliveryBasket deliveryBasket">
+        <button
+            class="deliveryBasket__btn deliveryBasket__delivery deliveryBasket__btn_active">Доставка</button>
+        <button class="deliveryBasket__btn deliveryBasket__takeaway">На вынос</button>
+    </div>
+
+
+    <div class="basketComposition__basketProducts basketProducts scrollStyle"></div>
+
+    <div class="basketComposition__shippingCost shippingCost">
+        <div class="shippingCost__block">
+            <img src="/menuImg/dostavka.png" alt="dostavka">
+            <div class="shippingCost__name">Доставка</div>
+            <div class="productPriceCommonUnit productPriceCommonUnit__green">
+                <div data-order="taxiFare" class="shippingCost__figures taxi__fare">350</div>
+                <div class="product__icon icon-rubles"></div>
+            </div>
+
+        </div>
+        <div class="shippingCost__block shippingCost__blockDiscount">
+            <div class="shippingCost__name shippingCost__discount">Скидка (15%)</div>
+            <div class="productPriceCommonUnit productPriceCommonUnit__red">
+                <div data-order="discount" class="shippingCost__figures discount__num">0</div>
+                <div class="product__icon icon-rubles"></div>
+            </div>
+        </div>
+    </div>
+    <div class="basketComposition__amountToBePaid amountToBePaid">
+        <div class="amountToBePaid__totalAmount">
+            <div class="amountToBePaid__totalAmountName">Оформляем, к оплате</div>
+            <div class="productPriceCommonUnit">
+                <div data-order="shippingCostTotal" class="shippingCost__figures shippingCost__total">0</div>
+                <div class="product__icon icon-rubles"></div>
+            </div>
+        </div>
+    </div>
+</div>

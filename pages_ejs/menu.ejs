@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<%- include('../components/head/head') %>
+
+    <% let arrCategory=['Холодные закуски', 'Салаты' , 'Горячие закуски' , 'Супы' , 'Рыба и море продукты'
+        , 'Блюда на углях мясные' , 'Мясные блюда' , 'На компанию' , 'Гарниры' , 'Пасты и пельмени' , 'Соуса' , 'Блины'
+        , 'Пицца' , 'Закуски к пиву' , 'Десерты' , 'Напитки' , "Поминальный обед" ]; %>
+
+        <body>
+            <header hidden class="header">
+                <%- include('../components/nav/nav') %>
+                    <div class="menu__info info"
+                        style="background: url(/banketImg/myasnoy-set-banket.jpg)0 0/cover no-repeat fixed;">
+                        <div class="triangle">
+                            <div class="info__title">
+                                <h2><span>Винтаж</span>Меню</h2>
+                            </div>
+
+                        </div>
+                        <%- include('../components/info/info') %>
+                    </div>
+
+
+                    <%- include('../components/basket/basket') %>
+
+
+            </header>
+
+            <main class="menu">
+                <div class="menu__block">
+                    <div class="menu__navigation">
+                        <div class="menu__styci scrollStyle">
+
+                            <div class="menu__title">Меню</div>
+                            <ul class="menu__list">
+                                <% arrCategory.forEach(e=> { %>
+                                    <li class="menu__item"><a class="menu__link" href="#<%=e %>">
+                                            <%=e %>
+                                        </a></li>
+                                    <%})%>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu__food">
+                        <% arrCategory.forEach(elem=> { %>
+                            <div id="<%=elem%>" class="menu_category">
+                                <%=elem%>
+                            </div>
+                            <div class="menu__price">
+                                <% results.forEach(e=> { %>
+                                    <% if (e.CATEGORY==elem ) { %>
+                                        <div class="menu__dish dish">
+
+                                            <% if (e.IMAGES=='' ) { %> <img class="dish__foto"
+                                                    data-src="/menuImg/food.gif" alt="">
+                                                <% } else { %> <img class="dish__foto" data-src="<%= e.IMAGES%>" alt="">
+                                                    <% } %>
+                                                        <div class="dish__rate">
+                                                            <div class="dish__ratePrice">
+                                                                <%= e.PRICE%>
+                                                            </div>
+                                                            <div class="product__icon icon-rubles"></div>
+                                                        </div>
+                                                        <div class="dish__name">
+                                                            <%= e['NAME/CODE']%>
+                                                        </div>
+                                                        <div class="dish__weight">
+                                                            <%= e.WEIGHT%> гр
+                                                        </div>
+                                                        <div class="dish__button">
+                                                            <button class="dish__btn"> + Добавить</button>
+                                                            <div class="btn__quantity_none">
+                                                                <div class="btn__plus">+</div>
+                                                                <div class="btn__num">0</div>
+                                                                <div class="btn__minus">-</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dish__options">
+                                                            <%= e.OPTIONS%>
+                                                        </div>
+                                                        <div class="dish__compositionDish">
+                                                            <%- e.DESCRIPTION%>
+                                                        </div>
+                                        </div>
+                                        <% } %>
+                                            <% }); %>
+                            </div>
+
+                            <%})%>
+
+                    </div>
+                </div>
+                <!-- Содержимое крзины -->
+                <%- include('../components/basketComposition/basketComposition') %>
+
+            </main>
+
+            <!-- =============================================================================================== -->
+            <%- include('../components/popup/popupModal/modal') %>
+                <%- include('../components/popup/popupComposDishes/composDishes') %>
+                    <%- include('../components/popup/popupClear/clear') %>
+                        <%- include('../components/popup/popupDelyveryData/deliveryData') %>
+                            <%- include('../components/popup/popupDeliveryTime/deliveryTime') %>
+                                <%- include('../components/popup/popupFormPayment/formPayment') %>
+
+                                    <%- include('../components/footer/footer') %>
+
+
+
+                                        <script type="module" src="/scriptMenu.js"></script>
+                                        <script type="module" src="/helpersScript/removingSpaces.js"></script>
+                                        <script type="module" src="/scriptaddBtn.js"></script>
+                                        <script type="module" src="/scriptAddCart.js"></script>
+                                        <script type="module" src="/basketScript.js"></script>
+                                        <script type="module"
+                                            src="/popup/popupDelyveryData/makingOrderScript.js"></script>
+                                        <script type="module" src="/orderDataCollectionScript.js"></script>
+                                        <script type="module" src="/popup/popupModal/modal.js"></script>
+                                        <script type="module" src="/popup/popupComposDishes/composDishes.js"></script>
+                                        <script type="module" src="/popup/popupDeliveryTime/delyveryTime.js"></script>
+                                        <script type="module" src="/popup/popupFormPayment/formPayment.js"></script>
+                                        <script type="module"
+                                            src="/popup/popupDelyveryData/validationScript.js"></script>
+                                        <script type="module" src="/info/info.js"></script>
+                                        <script src="/script.js"></script>
+
+        </body>
+
+</html>

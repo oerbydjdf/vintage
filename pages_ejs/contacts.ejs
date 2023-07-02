@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../components/head/head') %>
+
+    <body>
+        <header hidden class="header">
+            <%- include('../components/nav/nav') %>
+                <div class="menu__info info">
+                    <video class="video" controls="controls" autoplay="autoplay" <source src="<%= urlVideo %>"
+                        type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                    </video>
+                </div>
+        </header>
+
+        <main class="home">
+            <div class="home__aboutMenu aboutMenu" style="background-color: rgba(187, 179, 179, 0.178);">
+                <div class="aboutMenu__foto">
+                    <img src="/contactsImg/svayz.jpg" alt="Fotka" class="aboutMenu__img-600">
+                </div>
+                <div class="aboutMenu__text">
+                    <div class="aboutMenu__title">
+                        <span>Связь</span>
+                        <a href="+79826693010">+7(982)669-30-10</a>
+                        <a href="+73432512372">+7(343)251-23-72</a>
+                    </div>
+                    <div class="aboutMenu__asterisk icon-glass"></div>
+                    <div class="aboutmenu__link">
+                        <a href="/menu">Посмотри наше меню</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__aboutMenu aboutMenu">
+                <div class="aboutMenu__foto">
+                    <div id="map" style="width: 600px; height: 400px"></div>
+                </div>
+                <div class="aboutMenu__text">
+                    <div class="aboutMenu__title"><span>Адрес</span>г. Екатеринбург ул. Фрунзе 65</div>
+                    <div class="aboutMenu__asterisk icon-glass"></div>
+                    <div class="aboutmenu__link">
+                        <a href="/menu">Посмотри наше меню</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="background-color: rgba(187, 179, 179, 0.178);" class="home__aboutMenu aboutMenu_revers">
+                <div class="aboutMenu__foto">
+                    <img src="/contactsImg/oficRabota.jpg" alt="Fotka" class="aboutMenu__img">
+                    <img src="/contactsImg/povarRabota.jpg" alt="Fotka" class="aboutMenu__img">
+                </div>
+                <div class="aboutMenu__text">
+                    <div class="aboutMenu__title">
+                        <span>Работаем</span>
+                        <table class="workSchedule">
+                            <tr>
+                                <td>Понедельник</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td> - </td>
+                                <td>11:00 - 23:00</td>
+                            </tr>
+                            <tr>
+                                <td>Четверг</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Пятница</td>
+                                <td>11:00 - 00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Суббота</td>
+                                <td>12:00 - 00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Воскресенье</td>
+                                <td>12:00 - 23:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="aboutMenu__asterisk icon-glass"></div>
+                    <div class="aboutmenu__link">
+                        <a href="/menu">Посмотри наше меню</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+        <%- include('../components/footer/footer') %>
+
+
+
+            <script src="https://api-maps.yandex.ru/2.1?apikey=78c472f9-5667-4eca-a308-42b6008078c2&lang=ru_RU">
+            </script>
+            <script src="/script.js"></script>
+            <script src="/contacts.js"></script>
+            <script type="module" src="/info/info.js"></script>
+
+    </body>
+
+</html>

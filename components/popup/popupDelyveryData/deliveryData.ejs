@@ -1,0 +1,125 @@
+<div class="popup__deliveryData deliveryData">
+    <div class="deliveryData__header">
+
+        <div class="deliveryData__back">
+            <div class="deliveryData__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.8 7L9.04645 1.75355C9.24171 1.55829 9.24171 1.24171 9.04645 1.04645L8.35355 0.353553C8.15829 0.158291 7.84171 0.158291 7.64645 0.353553L0 8L7.64645 15.6464C7.84171 15.8417 8.15829 15.8417 8.35355 15.6464L9.04645 14.9536C9.24171 14.7583 9.24171 14.4417 9.04645 14.2464L3.8 9H15.5C15.7761 9 16 8.77614 16 8.5V7.5C16 7.22386 15.7761 7 15.5 7H3.8Z"
+                        fill="rgba(0, 0, 0, 0.637)" />
+                </svg>
+
+            </div>
+            <div class="deliveryData__nameArow">Назад</div>
+        </div>
+
+        <div class="deliveryData__foto">
+            <img class="deliveryData__logo" src="/mainImg/Logo.png" alt="logo">
+        </div>
+
+    </div>
+
+    <div class="deliveryData__content content">
+        <div class="content__block block">
+
+            <div class="block__deliveryInformation">
+
+                <div class="block__termsDelivery termsDelivery">
+                        <div class="termsDelivery__typeDelivery">
+                            <div class="content__title">Заполните данные для доставки</div>
+                        </div>
+                        <div class="termsDeliver__collectionPlace">
+
+                            <div class="termsDelivery__placeDelivery placeDelivery">
+                                <div class="placeDelivery__strit">
+                                    <input data-order="street" name=""
+                                    class="placeDelivery__input placeDelivery__inputText"
+                                    placeholder="Улица и номер дома" type="text">
+                                </div>
+                                <div class="placeDelivery__exactPlaceDeliver">
+                                    <input data-order="apartment" name="" class="placeDelivery__input placeDelivery__inputNum" placeholder="Кв/офис"
+                                        type="number">
+                                    <input data-order="intercom" name="" class="placeDelivery__input placeDelivery__inputNum" placeholder="Домофон"
+                                        type="number">
+                                    <input data-order="entrance" name="" class="placeDelivery__input placeDelivery__inputNum" placeholder="Подъезд"
+                                        type="number">
+                                    <input data-order="floor" name="" class="placeDelivery__input placeDelivery__inputNum" placeholder="Этаж"
+                                        type="number">
+                                </div>
+                            </div>
+                            <div class="placeDelivery__strit placeDelivery__comment">
+                                <input data-order="nameUser" name="" class="placeDelivery__input placeDelivery__inputText"
+                                    placeholder="Имя" type="text">
+                                <input data-order="email" name="" class="placeDelivery__input placeDelivery__inputText"
+                                    placeholder="Почта" type="email">
+                                <input data-order="phone" name="phone" class="placeDelivery__input placeDelivery__inputText"
+                                    placeholder="Телефон" type="tel">
+                                <input data-order="coment" name="" class="placeDelivery__input placeDelivery__inputText"
+                                    placeholder="Коментарий к заказу" type="text">
+                            </div>
+                        </div>
+
+                        <div class="content__title">Время доставки</div>
+                        <div class="termsDelivery__time time">
+                            <img class="time__foto" src="/menuImg/watch.png" alt="watch">
+                            <div data-order="deliveryTime" class="time__time">Текущее</div>
+                            <div class="time__arow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12"
+                                    fill="none">
+                                    <path d="M1 1.5L5.5 6L1 10.5" stroke="#21201F" stroke-width="1.5"
+                                        stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <div class="time__whenDeliver">
+                                <div class="time__dateDeliver">
+                                    <div class="time__current">Текущее</div>
+                                    <!-- <div class="time__byTime">Выбрать время</div> -->
+                                    <div class="timing__iconSvg timing__iconSvg_active">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                            <path d="M7 12s2.5 5 3.5 5 6-10 6-10" stroke="#1F2021" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="time__dateDeliver">
+                                    <div class="time__byTime">Выбрать время</div>
+                                    <div class="timing__iconSvg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                            <path d="M7 12s2.5 5 3.5 5 6-10 6-10" stroke="#1F2021" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                </div>
+
+                
+            </div>
+            <div class="block__termsDelivery block__order">
+                <div class="order__customersOrder">
+                    <div class="content__title">Ваш заказ</div>
+                </div>
+
+                <div class="order__instrumentation instrumentation">
+                    <div class="instrumentation__wraper">
+                        <img class="instrumentation__foto" src="/menuImg/pribor.png" alt="pribor">
+                        <div class="instrumentation__text">Положить приборы</div>                            
+                    </div>
+                    <div class="instrumentation__quantity">
+                        <div class="operator instrumentation__minus">-</div>
+                        <div data-order="numberOfDevices" class="instrumentation__quantityNum">Без приборов</div>
+                        <div class="operator instrumentation__plus">+</div>
+                    </div>
+                </div>
+                <div class="order__basket"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

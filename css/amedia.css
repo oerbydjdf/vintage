@@ -1,0 +1,375 @@
+@media (max-width: 1200px){
+    .titleBlock__logo {
+        width: 300px;
+    }
+    .aboutMenu__img-600 {
+        width: 511px;
+    }
+    .aboutMenu__img {
+        width: 240px;
+    }
+
+    .menu__line_1-Active {
+        left: -1px;
+        top: 9px;
+    }
+    .menu__line_3-Active {
+        top: 12px;
+    }
+    .header__menu:hover .menu__line_1 {
+        transform: rotate(0deg);
+        left: 0px;
+        top: 0px;
+        
+    }
+    .header__menu:hover .menu__line_2 {
+        display: block;
+        top: 12px;
+    }
+    .header__menu:hover .menu__line_3 {
+        top: 23px;
+    }
+    .menu__burger {
+        width: 25px;
+        height: 25px;
+    }
+    .menu__line_1 {
+        top: 0px;
+    }
+    .menu__line_2 {
+        top: 12px;
+    }
+    .menu__line_3 {
+        top: 23px;
+    }  
+    
+}
+
+@media (max-width: 960px) {
+    .titleBlock__logo {
+        width: 247px;
+    }
+    .aboutMenu__foto {
+        width: 500px;
+        display: none;
+    }
+
+    .aboutMenu__img-600 {
+        /* width: 219px; */
+        display: none;
+    }
+
+    .aboutMenu__img {
+        /* width: 240px; */
+        display: none;
+    }
+
+    .home__aboutMenu {
+        /* display: flex; */
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        /* align-items: center; */
+        gap: 0;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .aboutMenu__asterisk {
+        font-size: 25px;
+    }
+    .BgFotoTitle__text {
+        font-size: 30px;
+    }
+    .BgFotoTitle__text span {
+        font-size: 60px;
+        top: 15px;
+    }
+    .aboutMenu__title {
+        font-size: 40px;
+        
+    }
+    .aboutMenu__title span {
+        font-size: 70px;
+        top: 8px;
+    }
+
+    .menu__dish {
+        width: 200px;
+    }
+    .dish__foto {
+        width: 180px;
+    }
+
+
+    .footer__social {
+        flex-direction: column;
+        padding: 20px;
+        height: 500px;
+    }
+    .social__network {
+        justify-content: center;
+    }
+    .footer__info {
+        flex-direction: column;
+        gap: 10px 0;
+    }
+
+    .header__menu {
+        width: 40px;
+        height: 40px;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    .info__text_active {
+        line-height: 23px;
+        font-size: 17px;
+        width: 323px;
+    }
+    .info__title {
+        top: -292px;
+    }
+    .info__title span {
+        font-size: 73px;
+        left: -71px;
+    }
+    .info__title h2 {
+        font-size: 40px;
+    }
+    .info__info {
+        flex-direction: column;
+        gap: 14px;
+        position: absolute;
+        /* top: 396px; */
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        margin: 0;
+    }
+    .info__proposal {
+        font-size: 17px;
+        height: 34px;
+        width: 225px;
+    }
+
+
+    .menu__block {
+        flex-direction: column;
+    }
+    .menu__navigation {
+        height: 108px;
+        position: sticky;
+        top: -1px;
+        background-color: #F5F4F2;
+        z-index: 1;
+        font-size: 16px;
+    }
+    .menu__styci {
+        overflow: auto;
+        height: 70px;
+        padding: 9px 0 0 0;
+    }
+    .scrollStyle::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .menu__title {
+        display: none;
+    }
+    .menu__list { 
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        /* flex-direction: row; */
+        display: -webkit-box;
+    }
+    .menu__item {
+        background-color: #00000017;
+        height: 39px;
+        text-align: center;
+        line-height: 20px;
+        width: auto;
+    }
+    .header__menu {
+        top: 4px;
+        right: 4px;
+        width: 35px;
+        height: 35px;
+    }
+    .menu__line_3-Active {
+        top: 11px;
+    }
+    .menu__line_1 {
+        top: 3px;
+    }
+    .menu__line_3 {
+        top: 20px;
+    }
+    .basket_active {
+        top: 5px;
+        height: 33px;
+    }
+    .product__icon {
+        font-size: 20px;
+    }
+    /* .menu__navigation {
+    
+    } */
+    .menu__dish {
+        width: 145px;
+    }
+    .dish__foto {
+        width: 129px;
+        height: 105px;
+    }
+    .dish__rate {
+        font-size: 15px;
+        height: 0px;
+        margin: 0 0 16px 0;
+    }
+    .dish__name {
+        font-family: 'MontserratMedium';
+        /* font-size: 15px;
+        margin: 0 0 5px 0; */
+    }
+    .dish__btn {
+        font-size: 15px;
+        padding: 5px 15px;
+    }
+    .btn__quantity_active {
+        padding: 1px 8px;
+    }
+    .btn__quantity {
+        width: 123px;
+        font-size: 19px;
+    }
+    .popup__btn {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 35px;
+    }
+    .btn__button {
+        padding: 10px 22px;
+        font-size: 17px;
+        height: 40px;
+    }
+    .popup__composDishes_active {
+        max-height: 90vh;
+    }
+    .basketComposition__active {        
+        top: 5px;
+        right: 50%;
+        transform: translate(50%, 10px);
+        width: 333px;
+    }
+    .basketComposition__deliveryBasket {
+        height: 40px;
+    }
+    .deliveryBasket__btn {
+        font-size: 18px;
+        height: 28px;
+        width: 132px;
+    }
+    .basketProducts__container {
+        align-items: center;
+        flex-direction: column;
+        gap: 15px 0px;
+    }
+    .basketProducts__foto img {
+        height: 70px;
+    }
+    .basketProducts__quantitySelection {
+        width: 122px;
+    height: 31px;
+    }
+    .basketComposition__basketProducts > *:not(:last-child) {
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid #00000047;
+    }
+    .amountToBePaid__totalAmount {
+        font-size: 15px;
+        height: 40px;
+    }
+    .basketComposition__amountToBePaid .product__icon {
+        font-size: 21px;
+    }
+    .basketComposition__shippingCost {
+        gap: 0 20px;
+    }
+    .shippingCost__blockDiscount_active {
+        flex-direction: column;
+    }
+    .popup__clear_active {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .clear__cancellation {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .aboutMenu__title {
+        font-size: 32px;
+    }
+    .aboutMenu__title span {
+        font-size: 62px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .info__title span {
+        font-size: 63px;
+        left: -71px;
+    }
+    .info__title h2 {
+        font-size: 35px;
+    }
+    .info__text_active {
+        line-height: 18px;
+        font-size: 13px;
+        width: 272px;
+    }
+    .menu__dish {
+        width: 125px;
+    }
+    .dish__foto {
+        width: 105px;
+        height: 90px;
+    }
+    .dish__btn {
+        padding: 5px 7px;
+    }
+    .btn__quantity {
+        width: 105px;
+    }
+    .dish__name {
+        font-size: 14px;
+    }
+    .btn__add {
+        gap: 0 20px;
+    }
+    .popup__subtitle {
+        font-size: 19px;
+    }
+    .basketComposition__active {
+        width: 306px;
+    }
+    .shippingCost__block {
+        font-size: 13px;
+    }
+    .popup__clear_active {
+        width: 300px;
+    }
+    .clear__cancellation {
+        margin: 0 0 20px 0;
+    }
+}

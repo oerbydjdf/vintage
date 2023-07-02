@@ -1,0 +1,398 @@
+@import url("/font/stylesFonts.css");
+@import url("/iconFonts/styleIcon.css");
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+
+.menu__info {
+	/* border: 15px solid #F5F4F2; */
+	border: 15px solid #F7F1D6;
+	height: 100vh;
+    overflow: hidden;
+	position: relative;
+}
+.info__title {
+	/* background-color: rgba(255, 255, 255, 0.87);
+    font-size: 18px;
+    padding: 0 10px;
+    height: 50px;
+    border-radius: 5px; */
+	/* margin: 370px 0 0 52px; */
+    top: -262px;
+    left: -535px;
+    position: absolute;
+}
+.info__title h2{
+	font-size: 50px;
+	color: white;
+	font-family: 'MontserratSemiBold';
+}
+
+.info__title span {
+    display: block;
+	height: 65px;
+    font-family: 'Hand';
+    font-size: 80px;
+    color: #f0d24b;
+	position: relative;
+	top: 15px;
+	left: -25px;
+	z-index: 2;
+}
+.info__info {
+	/* margin: 20px 0 0 0;
+	display: flex;
+	gap: 25px; */
+	position: absolute;
+    /* top: 460px; */
+    bottom: 41px;
+    left: 57px;
+    display: flex;
+    gap: 25px;
+}
+.info__icon {
+	width: 32px;
+	height: 32px;
+}
+.info__proposal {
+	background-color: rgba(255, 255, 255, 0.87);
+	font-size: 18px;
+	font-family: 'MontserratSemiBold';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	height: 50px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.info__text {
+	display: none;
+}
+.info__text_active {
+	display: block;
+	background-color: rgba(255, 255, 255, 0.87);
+	font-size: 18px;
+	font-family: 'MontserratSemiBold';
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	width: 400px;
+	border-radius: 5px;
+	position: absolute;
+	line-height: 30px;
+	left: 50%;
+    transform: translate(-50%, 0px);
+    bottom: 232px;
+
+}
+/* =========================================================================== */
+.menu__block {
+	display: flex;
+	padding: 25px 25px;
+	gap: 50px;
+}
+.menu__navigation {
+	font-family: 'MontserratSemiBold';
+	font-size: 20px;
+}
+.menu__styci {
+	/* position: sticky;
+	top: -100px; */
+	position: sticky;
+    top: 40px;
+    overflow: auto;
+    height: 94vh;
+}
+.menu__title {
+	margin: 0 0 18px 0;
+}
+.menu__item {
+	/* border: 2px solid black; */
+	padding: 10px;
+	margin: 0 8px 5px 0;
+	width: 225px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.menu__item:hover {
+	background-color: white;
+}
+.menu__item_active {
+	background-color: white;
+
+}
+.menu__link {
+	color: black;
+}
+.menu__food {
+	font-family: 'MontserratSemiBold';
+	/* border: 2px solid black; */
+}
+.menu_category {
+	font-size: 20px;
+	margin: 0 0 15px 0;
+}
+.menu__price {
+	display: flex;
+	gap: 30px 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 0 45px 0;
+}
+.menu__dish {
+	/* background-color: #f0d24b77; */
+	background-color: rgba(187, 179, 179, 0.555);
+	padding: 10px;
+	border-radius: 10px;
+	width: 220px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+}
+.dish {
+}
+.dish__foto {
+	width: 200px;
+	height: 150px;
+	border-radius: 10px;
+	margin: 0 0 15px 0;
+}
+.dish__rate {
+	font-size: 18px;
+	height: 20px;
+	margin: 0 0 10px 0;
+	display: flex;
+	align-items: center;
+}
+.product__icon {
+    font-size: 24px;
+}
+.dish__name {
+	/* font-family: 'MontserratSemiBold'; */
+	font-size: 15px;
+	margin: 0 0 5px 0;
+	flex: 1;
+}
+.dish__weight {
+	opacity: 0.8;
+	margin: 0 0 20px 0;
+}
+.dish__button {
+	width: 126px;
+	
+}
+.dish__btn {
+	font-size: 16px;
+	padding: 10px 15px;
+	border-radius: 10px;
+}
+.dish__btn:hover {
+	background-color: white;
+}
+.dish__btn_none {
+	display: none;
+}
+.dish__options {
+	display: none;
+}
+.dish__compositionDish {
+	display: none;
+}
+
+
+
+/** Стилизация скрола */
+.scrollStyle {
+	scrollbar-width: thin;
+	/* scrollbar-color: gray #f0d24b; */
+	scrollbar-color: gray #cccbc9;
+}
+
+.scrollStyle::-webkit-scrollbar,
+.scrollStyle::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+.scrollStyle::-webkit-scrollbar-track,
+.scrollStyle::-webkit-scrollbar-track {
+  /* background: #f0d24b; */
+  background: #cccbc9;
+}
+.scrollStyle::-webkit-scrollbar-thumb,
+.scrollStyle::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+  /* border: 3px solid #f0d24b; */
+  border: 3px solid #cccbc9;
+}
+/* ---------------------------------------------------------------------- */
+.popup__compositionDish {	
+	font-size: 17px;
+	margin: 0 0 20px 0;
+}
+.popup__subtitle {
+	font-size: 20px;
+	margin: 0 0 15px 0;
+}
+.popup__options {
+	font-size: 17px;
+	display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+	overflow: hidden;
+}
+
+.popup__btn {
+    margin: 30px 0 0 0;
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+	justify-content: space-between;
+    gap: 15px 35px;
+	
+}
+.btn__add {
+	display: flex;
+    gap: 0px 40px;
+	
+}
+.btn__button {
+	padding: 15px 60px 15px 60px;
+    font-size: 22px;
+    border-radius: 15px;
+	font-family: MontserratSemiBold;
+	background-color: #f0d24b;
+	cursor: pointer;
+}
+.btn__quantity_none {
+	display: none;
+}
+.btn__quantity {
+	display: flex;
+	justify-content: space-around;
+    /* margin: 0 110px 0 0; */
+    font-size: 25px;
+    align-items: center;
+	width: 140px;
+	border: 1px solid black;
+    border-radius: 15px;
+	padding: 0 15px;
+}
+.btn__quantity_active{
+	/* display: flex; */
+	padding: 5px 8px;
+    border-radius: 10px;
+    background-color: #F5F4F2;
+
+}
+.btn__plus {
+	cursor: pointer;
+}
+.btn__num {
+	width: 77px;
+    text-align: center;
+}
+.btn__minus {
+	padding: 0 0 5px 0;
+	cursor: pointer;
+}
+.popup__amount {
+}
+.popup__title {
+	/* margin: 16px 0 5px 0; */
+}
+.popup__ratePrice {
+
+	display: flex;
+	align-items: center;
+}
+.popup__rate {
+	padding: 0 0px 0 10px;
+}
+.popup__icon {
+    font-size: 20px;
+}
+.optionsBox {
+	padding: 4px 0 0 4px;
+	display: flex;
+    align-items: center;
+}
+.optionText {
+	display: flex;
+    align-items: center;
+	/* position: relative; */
+}
+
+/* * Кастомный чек бокс */
+
+.my-checkbox {
+	transform: scale(1.5);
+	margin-right: 11px;
+}
+.optionsBox .popup__icon {
+	display: inline-block;
+	/* position: absolute;
+    top: -2px; */
+}
+.priceAndGlif {
+    align-items: center;
+    display: inline-flex;
+}
+  
+  .read-article{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 999;
+	color: #000;
+	background: white;
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-family: arial;
+	text-decoration: none;
+	box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+  }
+  .read-article:hover{
+	  background: #d5d5d5;
+	  box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+  }
+  iframe[sandbox] .read-article{
+	display: none;
+  }
+  

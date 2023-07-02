@@ -1,0 +1,440 @@
+@import url("styleMenu.css");
+@import url("/font/stylesFonts.css");
+@import url("/iconFonts/styleIcon.css");
+@import url("styleBasket.css");
+@import url("popupstyle.css");
+@import url("popupDeliveryDataStyle.css");
+/* @import url("barStyle.css"); */
+@import url("banketStyle.css");
+@import url("styleContacts.css");
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	background-color: #F5F4F2;
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+/* ===========================Повторяющиеся элементы================================================= */
+.BgFotoTitle {
+	border: 15px solid #F5F4F2;
+	height: 70vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.BgFotoTitle__text {
+	width: 500px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 50px;
+	color: white;
+	font-family: 'MontserratSemiBold';
+}
+.BgFotoTitle__text span {
+	font-family: 'Hand';
+	display: block;
+	height: 65px;
+	font-size: 80px;
+	font-style: normal;
+	color: #f0d24b;
+	position: relative;
+	z-index: 2;
+}
+/* ------------------------------------------------------- */
+.home__aboutMenu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0 50px;
+	padding: 60px 20px;
+}
+.aboutMenu_revers {
+	flex-direction: row-reverse;
+}
+.aboutMenu__foto {
+	width: 620px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px ;
+}
+.aboutMenu__img {
+	width: 300px;
+}
+.aboutMenu__img-600 {
+	width: 600px;
+}
+
+.aboutMenu__text {
+	text-align: center;
+	color: #515151;
+	font-size: 16px;
+	line-height: 1.7;
+	font-family: 'MontserratRegular';
+	width: 486px;
+	
+}
+.aboutMenu__title {
+	font-size: 50px;
+	color: #262526;
+	font-family: 'MontserratSemiBold';
+	line-height: 1;
+}
+.aboutMenu__title a {
+	color: #262526;
+}
+.aboutMenu__title span {
+    display: block;
+	height: 65px;
+    font-family: 'Hand';
+    font-size: 80px;
+    color: #f0d24b;
+	position: relative;
+	z-index: 2;
+}
+
+.aboutMenu__asterisk {
+	margin: 0 0 15px 0;
+	font-size: 30px;
+}
+
+.aboutmenu__link a {
+	font-family: 'MontserratSemiBold';
+	color: #f0d24b;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+/* ============================================================================================================= */
+.header {
+	position: relative;
+}
+.header__menu {
+	width: 60px;
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+    top: 17px;
+    right: 17px;
+	z-index: 5;
+	border: 2px solid #F5F4F2;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.menu__burger {
+	width: 32px;
+	height: 32px;
+	position: relative;
+	transition: all 800ms;
+}
+.menu__line {
+	width: 100%;
+	border: none;
+	border-top: 2px solid white;
+	transition: all 800ms;
+}
+.menu__line_1 {
+	position: absolute;
+	top: 3px;
+	
+}
+.menu__line_2 {
+	position: absolute;
+	top: 17px;
+}
+.menu__line_3 {
+	position: absolute;
+	top: 30px;
+}
+.header__menu:hover .menu__line_1{
+	top: 18px;
+	transform: rotate(90deg);
+	left: -1px;
+	top: 16px;
+}
+.header__menu:hover .menu__line_2{
+	display: none; 
+}
+.header__menu:hover .menu__line_3{
+	top: 18px;
+}
+.menu__line_1-Active{
+    position: absolute;
+    transform: rotate(135deg);
+    left: 0px;
+    top: 15px;
+}
+.menu__line_2-Active{
+	display: none; 
+}
+.menu__line_3-Active{
+    top: 18px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.header__menuList {
+	display: none;
+	/* transition: all 0.3s; */
+}
+.header__menuList_active {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 20px;
+	text-align: center;
+	font-size: 25px;
+	font-family: 'MontserratRegular';
+	/* transition: all 0.3s; */
+}
+.menuList__link {
+	color: rgba(240, 210, 75, 0.507);
+	display: block;
+	line-height: 65px;
+	transition: 0.3s;
+}
+.menuList__link:hover {
+	color: rgba(240, 210, 75, 0.836);
+	display: block;
+	line-height: 65px;
+	font-size: 30px;
+	transition: 0.3s;
+}
+.menuList__list {
+	height: 100%;
+	max-width: 350px;
+	margin: 0 auto;
+}
+.menuList__listAtem {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.menuList__listAtem > *:not(:last-child){
+	border-bottom: 1px solid rgba(240, 210, 75, 0.3);
+}
+/* ====================================================================================================== */
+.home__titleBlock {
+	background: url(/mainImg/fon2.jpg)0 0/cover no-repeat fixed;
+	/* border: 15px solid #F5F4F2; */
+	border: 15px solid #F7F1D6;
+	height: 100vh;
+	overflow: hidden;
+}
+.titleBlock {
+	position: relative;
+}
+.titleBlock__logo {
+	width: 400px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left:  50%;
+	transform: translate(-50%, -20%);
+}
+.titleBlock__slogan {
+    font-family: 'MontserratSemiBold';
+	background-color: rgba(255, 255, 255, 0.87);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 5px;
+	margin: 0 0 20px 0;
+
+}
+
+.titleBlock__img {
+	width: 100%;
+	margin:  0 0 10px 0;
+}
+.titleBlock__feature {
+	display: flex;
+	color: white;
+	font-size: 30px;
+	justify-content: space-between;
+	align-items: center;
+	padding: auto;
+}
+
+.titleBlock__feature span {
+	padding: 9px 0 0 0;
+}
+
+hr {
+	border-top: 3px solid white;
+    height: 5px;
+	width: 170px;
+	
+}
+
+.home__top {
+	color:white;
+	position: absolute;
+	left: 50%;
+	bottom: -11px;
+	transform: translate(-50%);
+}
+.home__arrow {
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	transform: translate(-50%);
+	font-size: 40px;
+	color: #515151;
+}
+/* =================================================================================== */
+
+h1 {
+	font-family: 'HandBlack';
+	font-size: 45px;
+	line-height: 1.3;
+	color: #262526;
+}
+/* ============================================================================= */
+
+.home__recipes {
+	background: url(/mainImg/vkusnueRecept.jpeg)0 0/cover no-repeat fixed;
+}
+/* ============================================================================ */
+
+
+.home__nalivki {
+	background: url(/mainImg/vkusnay_nastoika.jpg)0 0/cover no-repeat fixed;
+}
+.footer__feedbac {
+	position: relative;
+}
+.footer__bottom {
+	color: #252525;;
+}
+.btn--top {
+	position: relative;
+	top: -20px;
+}
+.btn__arrow {
+    display: block;
+    position: absolute;
+    left: 50%;
+	bottom: 1px;
+    height: 10px;
+    width: 10px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    transform: translateX(-50%) rotate(45deg);
+}
+.btn__arrow--top {
+    top: 2px;
+}
+.btn__arrow--bottom {
+    top: 8px;
+}
+.footer__social {
+	background-color: black;
+	height: 500px;
+	color: white;
+	font-size: 19px;
+	font-family: 'MontserratMedium';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0 60px;
+}
+.social__socialNet {
+	height: 143px;
+}
+.social__text {
+	margin: 0 0 20px 0;
+}
+.social__network {
+	display: flex;
+	gap: 0 15px;
+	font-size: 35px;
+}
+.social__forma {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 15px 0;
+}
+.forma_icon {
+	position: absolute;
+	color: black;
+	right: 7px;
+    top: 6px;
+}
+.forma__email {
+	font-size: 16px;
+	height: 30px;
+	padding: 5px 32px 5px 5px;
+}
+.forma__text {
+	height: 50px;
+	font-size: 16px;
+	padding: 5px;
+}
+.footer__info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #252525;
+	height: 150px;
+	color: #FFFFFF91;
+	font-size: 14px;
+	gap: 0 10px;
+}
+.footer__info a {
+	color: inherit;
+	font-size: inherit;
+}
+.footer__year {
+	text-transform: uppercase;
+}
+
+
+.triangle {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100vh 0 0 619px;
+    border-color: transparent transparent transparent #3a3a3a4d;
+}

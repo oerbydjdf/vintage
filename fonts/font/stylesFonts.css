@@ -1,0 +1,49 @@
+
+@font-face {
+  font-family: 'Hand';
+  src: url(./snellroundhand/snellroundhand_bold.woff) format('woff'),
+  url(./snellroundhand/snellroundhand_bold.ttf) format('ttf'),
+  url(./snellroundhand/snellroundhand_bold.otf) format('otf');
+}
+@font-face {
+  font-family: 'HandBlack';
+  src: url(./snellroundhand/snellroundhand_black.otf) format('woff'),
+  url(./snellroundhand/snellroundhand_black.otf.ttf) format('ttf'),
+  url(./snellroundhand/snellroundhand_black.otf.otf) format('otf');
+}
+@font-face {
+  font-family: 'HandRegular';
+  src: url(./snellroundhand/Snell-RoundhandRegular.woff) format('woff'),
+  url(./snellroundhand/Snell-RoundhandRegular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'MontserratItalic';
+  src: url(./Montserrat/Montserrat-Italic.woff) format('woff'),
+  url(./Montserrat/Montserrat-Italic.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'MontserratMedium';
+  src: url(./Montserrat/Montserrat-Medium.woff) format('woff'),
+  url(./Montserrat/Montserrat-Medium.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'MontserratMediumItalic';
+  src: url(./Montserrat/Montserrat-MediumItalic.woff) format('woff'),
+  url(./Montserrat/Montserrat-MediumItalic.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url(./Montserrat/Montserrat-Regular.woff) format('woff'),
+  url(./Montserrat/Montserrat-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'MontserratSemiBold';
+  src: url(./Montserrat/Montserrat-SemiBold.woff) format('woff'),
+  url(./Montserrat/Montserrat-SemiBold.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'MontserratSemiItalic';
+  src: url(./Montserrat/Montserrat-SemiBoldItalic.woff) format('woff'),
+  url(./Montserrat/Montserrat-SemiBoldItalic.ttf) format('ttf');
+}
