@@ -1,17 +1,21 @@
 'use strict'
 
 import { hidingTcontentsBasket } from "../../basketScript.js";
+import { disableChoiceDeliveryTime } from "../popupDeliveryTime/delyveryTime.js";
 import { hidingPopupWindow } from "../popupModal/modal.js";
 
 // *Вешаем обработчики событий на всплывающее окно c опциями
-let handlerClickPopupOptions = () => {
-    let popupClose = document.querySelector('.popup__close');
+export let handlerClickPopupOptions = () => {
+    let popupClose = document.querySelectorAll('.popup__close');
     let popupComposDishes = document.querySelector('.popup__composDishes');
-    popupClose.onclick = (e) => {
-        hidingPopupWindow();
-        hidingTcontentsBasket();
-        hidingPopupComposDishes();
-    }
+    popupClose.forEach(e => {
+        e.onclick = () => {
+            hidingPopupWindow();
+            hidingTcontentsBasket();
+            hidingPopupComposDishes();
+            disableChoiceDeliveryTime();
+        }
+    })
     popupComposDishes.onclick = (e) => e.stopPropagation();    
 }
 handlerClickPopupOptions();

@@ -46,7 +46,6 @@ let insertingOptions = (selector) => {
     let dishRatePrice = selector.querySelector('.dish__ratePrice');
     let popupRate = document.querySelector('.popup__rate');
     fotoUrlPopup = selector.querySelector('.dish__foto').getAttribute('src');
-    // console.log(fotoUrlPopup)
     
     if (arrOptions[0] === '') popupSubtitle.innerHTML = '';
     if (arrOptions[0] !== '') popupSubtitle.innerHTML = 'Рекомендуем добавить :)';
@@ -99,54 +98,30 @@ let scrollToElement = () => {
             behavior: 'smooth',
         });
         
+        
     });
 }
 scrollToElement();
 
-// *Меняем стиль кнопок навигации при клике
-let changingButtonStyles = () => {
+// *Вешаем обработчик на меню
+let handlerClickMenu = () => {
     let menuItem = document.querySelectorAll('.menu__item');
     menuItem.forEach(e => {
         e.onclick = () => {
-            let itemActive = document.querySelector('.menu__item_active');
-            if(itemActive === null) {
-                e.classList.add('menu__item_active');
-            } else {
-                itemActive.className = 'menu__item';
-                e.classList.add('menu__item_active');
-            }            
+            changingButtonStyles(e);
         }
     })
+
 }
-changingButtonStyles();
+handlerClickMenu();
 
-
-//* Ленивая загрузка Фото
-// * Обработчик скрола
-let scrollHandler = () => {
-    let windowHeight = document.documentElement.clientHeight * 1.5;
-    let dishFoto = Array.from(document.getElementsByClassName('dish__foto'));
-    let timerId;
-    window.addEventListener('scroll', function() {
-        if(timerId) clearTimeout(timerId);
-        timerId = setTimeout(() => {
-            replacingDataAttribute(windowHeight, dishFoto);
-        }, 1000);        
-    })
+// *Меняем стиль кнопок навигации
+export let changingButtonStyles = (e) => {
+    let itemActive = document.querySelector('.menu__item_active');
+    if(itemActive === null) {
+        e.classList.add('menu__item_active');
+    } else {
+        itemActive.className = 'menu__item';
+        e.classList.add('menu__item_active');
+    }
 }
-scrollHandler();
-
-// *Заменяем data-src на src
-let replacingDataAttribute = (height, dishFoto) => {
-    dishFoto.filter(e => {
-        return e.getAttribute('data-src') && e.getBoundingClientRect().y <= height * 1.5 && e.getBoundingClientRect().y >= -(height * 0.5)
-    })
-    .forEach(e => {
-        let url = e.getAttribute('data-src');
-        e.removeAttribute('data-src')
-        e.setAttribute('src', url);
-    })
-
-    
-}
-replacingDataAttribute(document.documentElement.clientHeight, Array.from(document.getElementsByClassName('dish__foto')))

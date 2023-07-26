@@ -21,6 +21,10 @@
 	right: 6px;
 	top: 5px;
 }
+.popup__close_center {
+	display: none;
+	left: 50%;
+}
 
 .popup__composDishes {
 	display: none;

@@ -7,6 +7,7 @@ import { handlerBtndelivery, handlerClearBasket, handlerQuantityGoodsBasket, cha
 import { togleChoiceDeliveryTime, definingСurrentTimeCurrentDay, handlerDeliveryTimeChoose } from '../popupDeliveryTime/delyveryTime.js';
 import { clickFormPayment, receiveOrderAmount } from '../popupFormPayment/formPayment.js';
 import { settingFocus, validation } from './validationScript.js';
+import { handlerClickPopupOptions } from '../popupComposDishes/composDishes.js';
 
 // *Вешаем обработчик события на кнопку в корзине
 let handlerMakingOrder = () => {
@@ -50,7 +51,8 @@ let handlerBack = () => {
         let deliveryDataContent = document.querySelector('.popup__deliveryData ');
         deliveryDataContent.classList.remove('popup__deliveryData_active');
         movingBasketToMenu();
-        deleteDataAtribute();    
+        deleteDataAtribute();
+        handlerClickPopupOptions();    
         document.body.style.overflow = "";
     }
 }

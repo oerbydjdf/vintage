@@ -50,16 +50,17 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .deliveryData {
 }
 .deliveryData__header {
-    position: fixed;
-    background-color: rgba(97, 94, 94, 0.555);
+    position: relative;
+    background-color: rgba(97, 94, 94, 1);
     height: 100px;
     margin: 0 0 60px 0;
     width: 100%;
+    z-index: 1;
     
 }
 .deliveryData__back {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 7%;
     transform: translate(-50%, -20%);
     cursor: pointer;
@@ -366,6 +367,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .time__whenDeliver_active {
     display: block;
+    z-index: 1;
 }
 .time__current {
 }
