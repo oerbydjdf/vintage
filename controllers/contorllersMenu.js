@@ -26,6 +26,14 @@ let info = {
         <a href="/offer">Ознакомтесь с офертой</a>`
     },
 }
+
+let metateg = {
+    discription:`Большое разнообразие блюд. Вы можете заказать мясо на углях, пиццу или пасту. 
+    Средни счет 800 р. На банкет 2800 р.
+    Работает доставка.
+    Так же для Вас есть бизнес ланч.`,
+    keywords: `меню кафе, кафе, шашлыки, пицца, паста, банкеты, кафе, доставка`
+}
 const getMenu = (req, res) => {
     const results = [];
     
@@ -34,7 +42,7 @@ const getMenu = (req, res) => {
     .on('data', (data) =>  results.push(data))
     .on('end', () => {
         // console.log(results)
-        res.render(createPath('menu'), {results, urlStyle: '/style.css', info});
+        res.render(createPath('menu'), {results, urlStyle: '/style.css', info, metateg});
         return;
     });
 }

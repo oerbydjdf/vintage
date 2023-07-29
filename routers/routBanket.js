@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const createPath = require('../helpers/createPath');
 
+let metateg = {
+    discription:`Проводим банкеты и дни рождения. Средний счет на банкет 1400 рублей. Мы поможем вам составить меню которое понравится Вам и вашим гостям.
+    Количество гостей до 35 человек.`,
+    keywords: `банкеты, дни рождения, корпаративы, кафе банкет, банкет люди, банкет цена, заказать банкет`
+}
 let info = {
     one: {
         title: 'Проводим банкеты.',
@@ -20,7 +25,7 @@ let info = {
     },
 }
 router.get('/banket', (req, res) => {
-    res.render(createPath('banket'), {urlStyle: '/style.css', info});
+    res.render(createPath('banket'), {urlStyle: '/style.css', info, metateg});
     });
 
 module.exports = router;
