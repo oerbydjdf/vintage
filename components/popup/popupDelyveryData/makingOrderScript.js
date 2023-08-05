@@ -13,6 +13,7 @@ import { handlerClickPopupOptions } from '../popupComposDishes/composDishes.js';
 let handlerMakingOrder = () => {
     let amountToBePaid = document.querySelector('.amountToBePaid__totalAmount');
     amountToBePaid.onclick = () => {
+        amountToBePaid.querySelector('.amountToBePaid__totalAmountName').innerHTML = 'Оплатить';
         hidingPopupWindow();
         hidingTcontentsBasket();
         activateBlockFillData();
@@ -50,6 +51,7 @@ let handlerBack = () => {
     deliveryDataBack.onclick = () => {
         let deliveryDataContent = document.querySelector('.popup__deliveryData ');
         deliveryDataContent.classList.remove('popup__deliveryData_active');
+        document.querySelector('.amountToBePaid__totalAmountName').innerHTML = 'Оформляем, к оплате';
         movingBasketToMenu();
         deleteDataAtribute();
         handlerClickPopupOptions();    

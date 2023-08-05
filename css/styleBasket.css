@@ -245,7 +245,8 @@
 }
 .amountToBePaid__totalAmount {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 0 20px;
     align-items: center;
     font-family: 'MontserratSemiBold';
     font-size: 20px;
@@ -253,6 +254,8 @@
     height: 50px;
     border-radius: 15px;
     cursor: pointer;
+    max-width: 400px;
+    margin: 0 auto;
 }
 .basketComposition__amountToBePaid .product__icon {
     font-size: 25px;

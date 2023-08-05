@@ -342,17 +342,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .payment__icon {
     line-height: 48px;
 }
-
-.finalCalculation__rubles {
-}
-.amountToBePaid__totalAmount {
-}
-.amountToBePaid__totalAmountName {
-}
-.shippingCost__total {
-}
-.finalCalculation__btn {
-}
 /* ====================================================== */
 .time__whenDeliver {
     display: none;

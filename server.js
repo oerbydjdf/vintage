@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+require('dotenv').config();
 
 // const cors = require('cors')
 const routHome = require('./routers/routHome');
@@ -18,8 +18,8 @@ const morgan = require('morgan');
 
 // app.use(cors());
 app.set('view engine', 'ejs');
-app.listen(PORT, (error) => {
-    error? console.log(error) : console.log(`listening port ${PORT}`)
+app.listen(process.env.PORT, (error) => {
+    error? console.log(error) : console.log(`listening port ${process.env.PORT}`)
 });
 
 // *==============================Чтение csv==================================================
