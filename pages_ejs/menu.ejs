@@ -55,7 +55,7 @@
 
                                             <% if (e.IMAGES=='' ) { %> <img class="dish__foto"
                                                     data-src="/menuImg/food.gif" alt="">
-                                                <% } else { %> <img class="dish__foto" data-src="<%= e.IMAGES%>" alt="">
+                                                <% } else { %> <img class="dish__foto" data-src="<%= encodeURI(e.IMAGES)%>" alt="">
                                                     <% } %>
                                                         <div class="dish__rate">
                                                             <div class="dish__ratePrice">

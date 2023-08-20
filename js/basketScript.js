@@ -74,13 +74,12 @@ export let fillingBasket = (arrBasket) => {
     let basketProducts = document.querySelector('.basketProducts');
     basketProducts.innerHTML = '';
     arrBasket.forEach(e => {
-        let url = encodeURI(e.foto);
         let div = document.createElement('div');
         div.className = 'basketProducts__container';
         div.innerHTML = `
             <div class="basketProducts__product">
                 <div class="basketProducts__foto">                    
-                    <img src=${url} alt="">
+                    <img src=${e.foto} alt="">
                 </div>
                 <div class="basketProducts__productDescription">
                     <div class="basketProducts__productName">${e.name}</div>
