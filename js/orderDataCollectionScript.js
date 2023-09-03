@@ -34,7 +34,6 @@ export let wrapperForFunctions = () => {
     customerAndOrderData.client = collectsCustomerData(dataClient);
     customerAndOrderData.order = basket;
     customerAndOrderData.orderNumber = generatingOrderNumber();
-    // console.log(customerAndOrderData)
     weSendOrderData(customerAndOrderData)
     
 }
@@ -54,7 +53,10 @@ let collectsCustomerData = (dataClient) => {
 
 // * Отправляем данные заказа
 let weSendOrderData = async (data) => {
-    let response = await fetch('http://localhost:3000/order', {
+    let string = document.URL.split('/');
+    string.splice(-1, 1, 'order');    
+    let url = string.join('/');
+    let response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

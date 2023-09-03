@@ -11,7 +11,7 @@ let metateg = {
 }
 
 router.get('/contacts', (req, res) => {
-    res.render(createPath('contacts'), {urlVideo: '/promoRolik/30_ВИНТАЖ_0323.mp4', urlStyle: '/style.css', metateg});
+    res.render(createPath('contacts'), {urlVideo: '/promoRolik/vintagePromoVideo.mp4', urlStyle: '/style.css', metateg});
     });
 
 module.exports = router;

@@ -257,7 +257,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	background: url(/mainImg/fon2.jpg)0 0/cover no-repeat fixed;
 	/* border: 15px solid #F5F4F2; */
 	border: 15px solid #F7F1D6;
-	height: 100vh;
+	height: 100svh;
 	overflow: hidden;
 }
 .titleBlock {
@@ -438,6 +438,6 @@ h1 {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 100vh 0 0 619px;
+    border-width: 100svh 0 0 619px;
     border-color: transparent transparent transparent #3a3a3a4d;
 }

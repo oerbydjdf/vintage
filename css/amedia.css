@@ -53,6 +53,9 @@
         width: 500px;
         display: none;
     }
+    .titleBlock__slogan {
+        font-size: 16px;
+    }
 
     .aboutMenu__img-600 {
         /* width: 219px; */
@@ -124,6 +127,9 @@
 }
 
 @media (max-width: 430px) {
+    .aboutMenu__title {
+        font-size: 38px;
+    }
     .menuList__link {
         color: rgba(240, 210, 75, 0.836);
     }
@@ -133,7 +139,7 @@
         width: 323px;
     }
     .info__title {
-        top: -292px;
+        bottom: 190px;
     }
     .info__title span {
         font-size: 73px;
@@ -146,7 +152,6 @@
         flex-direction: column;
         gap: 14px;
         position: absolute;
-        /* top: 396px; */
         bottom: 20px;
         left: 50%;
         transform: translate(-50%, 0px);
@@ -156,6 +161,10 @@
         font-size: 17px;
         height: 34px;
         width: 225px;
+    }
+    .info__gif {
+        top: 55px;
+        left: 143px;
     }
 
 
@@ -187,14 +196,17 @@
         display: -webkit-box;
     }
     .menu__item {
-        background-color: #00000017;
         height: 39px;
         text-align: center;
         line-height: 20px;
         width: auto;
+        
     }
     .menu__item_active {
         background-color: white;
+    }
+    .menu__item:not(.menu__item_active):hover {
+        background-color: #F5F4F2;
     }
     .header__menu {
         top: 4px;
@@ -218,9 +230,6 @@
     .product__icon {
         font-size: 20px;
     }
-    /* .menu__navigation {
-    
-    } */
     .menu__dish {
         width: 145px;
     }
@@ -235,8 +244,6 @@
     }
     .dish__name {
         font-family: 'MontserratMedium';
-        /* font-size: 15px;
-        margin: 0 0 5px 0; */
     }
     .dish__btn {
         font-size: 15px;
@@ -324,12 +331,6 @@
     .placeDelivery__inputText {
         width: 90vw;
     }
-    /* .placeDelivery__inputNum {
-        width: 90px;
-    } */
-    /* .placeDelivery__input {
-        font-size: 13px;
-    } */
     .instrumentation__text {
         font-size: 15px;
         line-height: 20px;

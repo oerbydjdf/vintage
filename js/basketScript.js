@@ -79,7 +79,7 @@ export let fillingBasket = (arrBasket) => {
         div.innerHTML = `
             <div class="basketProducts__product">
                 <div class="basketProducts__foto">                    
-                    <img src=${e.foto} alt="">
+                    <img src='${e.foto}' alt="">
                 </div>
                 <div class="basketProducts__productDescription">
                     <div class="basketProducts__productName">${e.name}</div>
