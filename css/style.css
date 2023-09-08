@@ -4,9 +4,9 @@
 @import url("styleBasket.css");
 @import url("popupstyle.css");
 @import url("popupDeliveryDataStyle.css");
-/* @import url("barStyle.css"); */
 @import url("banketStyle.css");
 @import url("styleContacts.css");
+@import url("styleBar.css");
 /*Обнуление*/
 *{
 	padding: 0;

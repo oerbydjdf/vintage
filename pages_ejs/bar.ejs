@@ -19,24 +19,46 @@
     </header>
 
     <main class="menu">
-        <div style="margin: 70px auto 0 auto;">
-
-            <object
-                type="application/pdf" 
-                class="drinks__pdf"
-                data="https://docs.google.com/document/d/1-f6WxZgkLjkutJ6cNPNrFx8LO5D7cA4GFdvs57vY2Ok/preview?usp=sharing"
-                width="800px" height="">
-                <embed 
-                class="drinks__pdf"
-                src="https://docs.google.com/document/d/1-f6WxZgkLjkutJ6cNPNrFx8LO5D7cA4GFdvs57vY2Ok/preview?usp=sharing"
-                width="800px" height="">
-            </object>
+        <div class="separator">
+            <div class="separator__bar">
+                <hr>
+                <div class="icon-glass"></div>
+                <hr>
+            </div>
         </div>
+
+        <div class="containerPdf containerPdf__BezAlc"></div>
+
+        <div class="separator">
+            <div class="separator__bar">
+                <hr>
+                <div class="icon-glass"></div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="warning18">
+            <div class="warning18__text">
+                Дальнейший просмотр доступен только для лиц старше 18 лет
+            </div>
+            <div class="warning18__condition">
+                Я СТАРШЕ 18 ЛЕТ
+            </div>
+            <div class="warning18__buttom button">
+                <button class="buttom__yes">Да</button>
+                <button class="buttom__none">Нет</button>
+            </div>
+
+        </div>
+        <div class=" containerPdf containerPdf__Alc"></div>
             
     </main>
     <%- include('../components/footer/footer') %>   
-    <script src="/scriptBar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.min.js"></script>
+    <script type="module" src="/scriptBar.js"></script>
+    <script src="/helpersScript/pdfPpload.js"></script>
     <script src="/script.js"></script>
+    
 </body>
 
 </html>

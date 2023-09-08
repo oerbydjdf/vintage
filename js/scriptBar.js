@@ -1,37 +1,20 @@
 'use strict'
-// *Передаем размер экрана
-let transmittingScreenSize = () => {
-    let height = document.documentElement.clientHeight;
-    let width = document.documentElement.clientWidth;
-    
-    let scrollHeight = Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-      );
 
+import { uploadingPdfToPage } from "./helpersScript/pdfPpload.js";
 
-    let obj = document.querySelectorAll('.drinks__pdf');
-    obj.forEach(e => {
-        e.setAttribute('width', width);
-        e.setAttribute('height', scrollHeight);
-    })
-    }
-    transmittingScreenSize();
-    
-    
-//     window.addEventListener("resize", function() {
-//         let scrollHeight = Math.max(
-//             document.body.scrollHeight, document.documentElement.scrollHeight,
-//             document.body.offsetHeight, document.documentElement.offsetHeight,
-//             document.body.clientHeight, document.documentElement.clientHeight
-//           );
-//         let width = document.documentElement.clientWidth;
-//         let obj = document.querySelector('object');
-//         obj.setAttribute('width', width)
-//         obj.setAttribute('width', scrollHeight)
-//     // Здесь получаем размеры экрана (inner/outerWidth, inner/outerHeight)
+//* Вставляем пдф
 
-// }, false);
+uploadingPdfToPage('.containerPdf__BezAlc', '/BarBezAlcNizkoeKachestvo.pdf');
+
+// *Показываем блок с алкоголем
+let showingblockWithAlcohol = () => {
+  let buttomYes = document.querySelector('.buttom__yes');
+  let warning18 = document.querySelector('.warning18');
+  buttomYes.onclick = () => {
+    uploadingPdfToPage('.containerPdf__Alc', '/BARAlco.pdf');
+    warning18.classList.add('warning18_none');
+  }
+}
+showingblockWithAlcohol();
 
 
