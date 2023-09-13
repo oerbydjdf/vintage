@@ -1,20 +1,32 @@
 'use strict';
 import { fotoUrlPopup } from "./scriptMenu.js";
 import { showHideCart, countingAmount, fillingBasket, insertAmountIntoBasket, recalculatingOrderAmount, insertingDiscount } from "./basketScript.js";
-// import { clearBasket } from "../";
+
 import { weightFinishedDish } from "./scriptaddBtn.js";
 import { clearBasket } from "/popup/popupClear/clear.js";
 
 
 export let basket = [];
 
-function ObgDish(name, options, quantity, amount, foto, weight) {
+// function ObgDish(name, options, quantity, amount, foto, weight) {
+//     this.name = name;
+//     this.options = options;
+//     this.quantity = quantity;
+//     this.amount = amount;
+//     this.foto = foto;
+//     this.weight = weight;
+// }
+function ObgDish(name, options, quantity, amount, foto, weight, takeawayDiscount = 0,) {
     this.name = name;
     this.options = options;
     this.quantity = quantity;
     this.amount = amount;
     this.foto = foto;
     this.weight = weight;
+    this.takeawayDiscount = takeawayDiscount;
+    this.amountDiscount = () => (this.amount / 100 * this.takeawayDiscount ).toFixed(2);
+    this.price = () => (this.amount / this.quantity);
+    this.priceDiscount = () => (this.price() / 100 * this.takeawayDiscount).toFixed(2);
 }
 // *Создаем новый обьект блюда для добавления в корзину при клике на кнопку "Добавить" на карточке товара
 let creatingDishObj = (target) => {
@@ -44,17 +56,14 @@ export {creatingDishObj}
 
 let arrNameOptions = [];
 export let creatingDishObjPopup = () => {
-    let popupActive = document.querySelector('.popup_active');
-    // let dishNamePopup = popupActive.querySelector('.dish__name-popup').innerHTML.replace(/\s*\n\s*/g,"");
+    // let popupActive = document.querySelector('.popup_active');
     let dishNamePopup = document.querySelector('.dish__name-popup').innerHTML.replace(/\s*\n\s*/g,"");
-    // let btnNum = popupActive.querySelector('.btn__num').innerHTML;
     let btnNum = document.querySelector('.popup__btnNum').innerHTML;
     let popupRate = document.querySelector('.popup__rate').innerHTML;
     let obgDish = new ObgDish(dishNamePopup, arrNameOptions, +btnNum, +popupRate, fotoUrlPopup, weightFinishedDish);
     addingToCart(obgDish)
     arrNameOptions = [];
 }
-//  {creatingDishObjPopup}
 
 // * Получаем названия выбранных опций
 export let getSelectedOptions = (e) => {
@@ -94,11 +103,12 @@ let addingToCart = (obj, target = 'popup') => {
         removingDishArr(basket[objIndex].quantity, objIndex)
         // console.log(basket)
     }
-
+    
     showHideCart(basket);
     insertAmountIntoBasket(countingAmount(basket));
     // countingAmount(basket);
     fillingBasket(basket);
+    // console.log(basket)
     
 }
 

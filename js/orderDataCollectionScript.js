@@ -9,7 +9,7 @@ let customerAndOrderData = {
     orderNumber: '',
 }
 
-let dataClient = {
+export let dataClient = {
     street: "",
     apartment: "",
     intercom: "",

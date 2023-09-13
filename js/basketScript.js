@@ -14,11 +14,12 @@ export let showHideCart = (arrCart) => {
 // * Считаем общую сумму товара в корзине экспортирована в'scriptAddCart'
 export let countingAmount = (arrCart) => {
     let deliveryBasketTakeaway = document.querySelector('.deliveryBasket__takeaway'); 
-    let totalAmount = 0;
-    arrCart.forEach(e => totalAmount += e.amount);
-    // Делает скидку когда кнопка "На вынос" нажата и клиент добавляет новый товар
+    let totalAmount = arrCart.reduce((sum, item) => sum + +item.amount, 0);
+    arrCart.forEach(e => e.takeawayDiscount = 0)
+    //* Делает скидку когда кнопка "На вынос" нажата и клиент добавляет новый товар
     if(deliveryBasketTakeaway.classList.contains('deliveryBasket__btn_active')) {
-        let discount = totalAmount / 100 * 15;
+        arrCart.forEach(e => e.takeawayDiscount = 15)
+        let discount = arrCart.reduce((sum, item) => sum + +item.amountDiscount(), 0);
         insertingDiscount(discount);
         return (totalAmount - discount).toFixed(2);        
     }
