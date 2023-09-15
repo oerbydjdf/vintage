@@ -15,7 +15,7 @@ const postOrder = (req, res) => {
     });
     let mailOptions = {
         from: '"Кафе Винтаж" <2512372@mail.ru>', // sender address
-        // to: `${req.body.client.email}, vintage65@yandex.ru`, // list of receivers
+        to: `${req.body.client.email}, vintage65@yandex.ru`, // list of receivers
         subject: 'Доставка кафе Винтаже', // Subject line
         text: '', // plain text body
         html: createsHtmlOrderData(req.body) // html body
@@ -25,8 +25,8 @@ const postOrder = (req, res) => {
         if (error) {
             return console.log(error);
         }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-            // res.render('index');
+        // console.log('Message %s sent: %s', info.messageId, info.response);
+            
         });
     
         return res.json(req.body);
@@ -86,7 +86,7 @@ let createsHtmlClientData = (data) => {
     <tr><td>Подъезд</td><td>${data.client.entrance}</td></tr>
     <tr><td>Этаж</td><td>${data.client.floor}</td></tr>
     <tr><td>Почта</td><td>${data.client.email}</td></tr>
-    <tr><td>Телефон</td><td>${data.client.phone}</td></tr>
+    <tr><td>Телефон</td><td>${data.client.phoneUrl}</td></tr>
     <tr><td>Время доставки</td><td>${data.client.deliveryTime}</td></tr>
     <tr><td>Колличество приборов</td><td>${data.client.numberOfDevices}</td></tr>
     <tr><td>Коментарий</td><td>${data.client.coment}</td></tr>

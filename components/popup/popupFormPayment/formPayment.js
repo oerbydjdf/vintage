@@ -29,9 +29,9 @@ export let receiveOrderAmount = () => {
         return (
             {
                 "Name": e.name,
-                "Price": (e.price() - +e.priceDiscount()) * 100,
+                "Price": ((+e.price() - +e.priceDiscount()) * 100).toFixed(0),
                 "Quantity": e.quantity + '.00',
-                "Amount": (e.amount - +e.amountDiscount()) * 100,
+                "Amount": ((e.amount - +e.amountDiscount()) * 100).toFixed(0),
                 "PaymentMethod": "full_payment",
                 "PaymentObject": "commodity",
                 "Tax": "none"

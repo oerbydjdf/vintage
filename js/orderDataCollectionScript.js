@@ -17,6 +17,7 @@ export let dataClient = {
     floor: "",
     email: "",
     phone: "",
+    phoneUrl: "",
     coment: "",
     deliveryTime: "",
     numberOfDevices: "Без приборов",
@@ -48,6 +49,11 @@ let collectsCustomerData = (dataClient) => {
             dataClient[e.dataset.order] = e.innerHTML;
         }
     })
+    // *Создаем ссылку ватсап.
+    let phoneNum = dataClient.phone.replace(/[^0-9.]/g, '');
+    dataClient.phoneUrl = `<a href="https://wa.me/${phoneNum}?text=Здравствуйте%2C+заказ+принят.">${dataClient.phone}</a>`
+
+
     return dataClient;
 }
 

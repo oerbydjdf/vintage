@@ -10,6 +10,7 @@ let normalizePhone = () => {
   input.onclick = () => input.value = '+7';
 
   input.addEventListener('keyup', function(event) {
+    if(event.key == 'Backspace' || event.key == 'Delete') return;
     if(input.value.length == 5) input.value += '-';
     if(input.value.length == 8) input.value += '-';
     if(input.value.length == 11) input.value += '-';
@@ -83,8 +84,8 @@ let validateEmail = (i) => {
     return (reg.test(i.value));
 }
 let validatePhone = (i) => {
-    let reg = /^[+0-9\-]{15}$/
-    return (reg.test(i.value));
+    let reg = /^[+0-9\-\()]/
+    return (i.value.match(/[0-9]/g).length == 11 && reg.test(i.value)) ? true: false;
 }
 
 let error = (e, bool) => {  

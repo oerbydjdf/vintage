@@ -18,9 +18,9 @@ export let uploadingPdfToPage = (blockName, url) =>{
               canvas.width = viewport.width;
               containerPdf.append(canvas);
               page.render({ canvasContext: context, viewport: viewport });
+              div.innerHTML = '';
             });
         }
-        div.remove();
     });
   
 }
