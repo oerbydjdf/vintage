@@ -2,6 +2,7 @@
 import { removingSpaces } from './helpersScript/removingSpaces.js';
 import { func } from './scriptaddBtn.js';
 import { showingPopup } from '/popup/popupModal/modal.js';
+import { insertingPhoto } from '/popup/popupComposDishes/composDishes.js';
 
 // * Вешаем обработчик на блюда
 let handlerDish = () => {
@@ -13,6 +14,7 @@ let handlerDish = () => {
             insertingOptions(e);
             let btn = e.querySelector('.dish__button')
             func(btn);
+            insertingPhoto(e)
         }
     })
 }
@@ -23,6 +25,8 @@ let showPopupComposDishes = () => {
     let popupComposDishes = document.querySelector('.popup__composDishes');
     popupComposDishes.classList.add('popup__composDishes_active');
 
+    //*Прокручиваем блок с опциями вверх
+    document.querySelector('.popup__datadish').scrollTop = 0; 
 }
 
 

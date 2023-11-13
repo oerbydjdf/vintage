@@ -137,8 +137,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	margin: 0 0 18px 0;
 }
 .menu__item {
-	/* border: 2px solid black; */
-	padding: 10px;
 	margin: 0 8px 5px 0;
 	width: 225px;
 	cursor: pointer;
@@ -153,6 +151,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 .menu__link {
 	color: black;
+	color: black;
+    width: 100%;
+    display: block;
+    padding: 10px 10px;
 }
 .menu__food {
 	font-family: 'MontserratSemiBold';

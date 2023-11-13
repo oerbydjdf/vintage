@@ -8,14 +8,6 @@ import { clearBasket } from "/popup/popupClear/clear.js";
 
 export let basket = [];
 
-// function ObgDish(name, options, quantity, amount, foto, weight) {
-//     this.name = name;
-//     this.options = options;
-//     this.quantity = quantity;
-//     this.amount = amount;
-//     this.foto = foto;
-//     this.weight = weight;
-// }
 function ObgDish(name, options, quantity, amount, foto, weight, takeawayDiscount = 0,) {
     this.name = name;
     this.options = options;
@@ -42,12 +34,8 @@ let creatingDishObj = (target) => {
     let options = [];
     let quantity = (target.className === 'btn__minus')? -1: 1;
     let amount = dishRatePrice;
-    // let obgDish = new ObgDish(name, options, quantity, +amount, dishFoto)
     let obgDish = new ObgDish(name, options, quantity, +amount, dishFoto, dishWeight)
-    addingToCart(obgDish, target);
-    // console.log(obgDish.foto)
-    // console.log(dishFoto)
-    
+    addingToCart(obgDish, target);    
 
 }
 export {creatingDishObj}
@@ -56,7 +44,6 @@ export {creatingDishObj}
 
 let arrNameOptions = [];
 export let creatingDishObjPopup = () => {
-    // let popupActive = document.querySelector('.popup_active');
     let dishNamePopup = document.querySelector('.dish__name-popup').innerHTML.replace(/\s*\n\s*/g,"");
     let btnNum = document.querySelector('.popup__btnNum').innerHTML;
     let popupRate = document.querySelector('.popup__rate').innerHTML;

@@ -267,7 +267,8 @@
         height: 40px;
     }
     .popup__composDishes_active {
-        max-height: 90vh;
+        /* max-height: 90vh; */
+        /* height: 97svh; */
     }
     .basketComposition__active {        
         top: 5px;

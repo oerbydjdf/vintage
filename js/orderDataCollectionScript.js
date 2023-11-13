@@ -26,7 +26,7 @@ export let dataClient = {
     discount: '',
     shippingCostTotal: '',
     nameUser: '',
-    
+
 }
 
 
@@ -35,15 +35,17 @@ export let wrapperForFunctions = () => {
     customerAndOrderData.client = collectsCustomerData(dataClient);
     customerAndOrderData.order = basket;
     customerAndOrderData.orderNumber = generatingOrderNumber();
-    weSendOrderData(customerAndOrderData)
-    
+    weSendOrderData(customerAndOrderData);
+    // creatingLinkYandexTaxi();
+    // console.log(dataClient.street)
+
 }
 
 // * Собирает данные клиента для доставки
 let collectsCustomerData = (dataClient) => {
     let data = document.querySelectorAll('[data-order]');
     data.forEach(e => {
-        if(e.tagName ==  'INPUT') {
+        if (e.tagName == 'INPUT') {
             dataClient[e.dataset.order] = e.value;
         } else {
             dataClient[e.dataset.order] = e.innerHTML;
@@ -60,7 +62,7 @@ let collectsCustomerData = (dataClient) => {
 // * Отправляем данные заказа
 let weSendOrderData = async (data) => {
     let string = document.URL.split('/');
-    string.splice(-1, 1, 'order');    
+    string.splice(-1, 1, 'order');
     let url = string.join('/');
     let response = await fetch(url, {
         method: 'POST',
@@ -69,19 +71,38 @@ let weSendOrderData = async (data) => {
         },
         body: JSON.stringify(data),
 
-      });
-      let result = await response.json();
-      console.log(result)
-      return;
+    });
+    let result = await response.json();
+    // console.log(result)
+    return;
 }
 
 // * Генерируем номер заказа
 let generatingOrderNumber = () => {
-    let arrNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // let arrNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     let orderNumber = '';
-    for(let i = 0; i < 10; i++) {
-        if(orderNumber.length == 6) orderNumber += '-';
+    for (let i = 0; i < 10; i++) {
+        if (orderNumber.length == 6) orderNumber += '-';
         orderNumber += Math.floor(Math.random() * (10 - 0))
     }
     return orderNumber;
 }
+
+// * Создаем ссылку в яндекс такси
+// let creatingLinkYandexTaxi = () => {
+//     let street = dataClient.street;
+//     function init(ymaps) {
+//         var myGeocoder = ymaps.geocode(`Екатеринбург, ${street}`);
+//         myGeocoder.then(function (res) {
+//             var firstGeoObject = res.geoObjects.get(0),
+//                 coords = firstGeoObject.geometry.getCoordinates();
+
+//             dataClient.street = `<a href="https://3.redirect.appmetrica.yandex.com/route?start-lat=56.812374&start-lon=60.603052&end-lat=${coords[0]}&end-lon=${coords[1]}&level=express&appmetrica_tracking_id=1178268795219780156&lang=ru">${street}</a>`
+//             weSendOrderData(customerAndOrderData);
+//         });
+//     }
+//     ymaps.ready(init);
+
+//     56.812374, 60.603052
+// }
+

@@ -55,6 +55,17 @@
 	overflow-y: auto;
 	max-height: 300px;
 }
+.popup__fotodish {
+	margin: 0 0 25px 0;
+    border-radius: 31px;
+
+}
+.popup__img {
+	display: block;
+	width: clamp(100px, 100%, 350px);
+    border-radius: 15px;
+    margin: 0 auto;
+}
 
 
 

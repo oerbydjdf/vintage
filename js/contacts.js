@@ -1,5 +1,6 @@
 'use strict'
 
+
 function init(ymaps) {
   var map = new ymaps.Map("map", {
       center: [56.81265,60.602873],
@@ -20,3 +21,6 @@ function init(ymaps) {
 }
 
 ymaps.ready(init);
+
+
+

@@ -26,3 +26,10 @@ export let hidingPopupComposDishes = () => {
     popupComposDishes.querySelector('.btn__num').innerHTML = 1;
     popupComposDishes.className = 'popup__composDishes';
 }
+
+// * Вставляем фото в popup__img
+export let insertingPhoto = (dish) => {
+    let foto = dish.querySelector('.dish__foto').getAttribute('src');
+    document.querySelector('.popup__img').setAttribute('src', foto);
+
+}
