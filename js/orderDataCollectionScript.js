@@ -79,7 +79,6 @@ let weSendOrderData = async (data) => {
 
 // * Генерируем номер заказа
 let generatingOrderNumber = () => {
-    // let arrNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     let orderNumber = '';
     for (let i = 0; i < 10; i++) {
         if (orderNumber.length == 6) orderNumber += '-';

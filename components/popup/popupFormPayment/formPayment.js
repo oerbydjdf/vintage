@@ -56,5 +56,5 @@ export let receiveOrderAmount = () => {
         "Taxation": "usn_income_outcome",
         "Items": [...productReceipt, deliveryPriceReceipt],
     });
-    }
+}
 

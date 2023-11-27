@@ -58,20 +58,14 @@
     }
 
     .aboutMenu__img-600 {
-        /* width: 219px; */
         display: none;
     }
 
     .aboutMenu__img {
-        /* width: 240px; */
         display: none;
     }
 
     .home__aboutMenu {
-        /* display: flex; */
-        /* justify-content: center; */
-        /* justify-content: space-around; */
-        /* align-items: center; */
         gap: 0;
         padding: 20px;
     }
@@ -232,6 +226,7 @@
     }
     .menu__dish {
         width: 145px;
+        padding: 10px 8px;
     }
     .dish__foto {
         width: 129px;

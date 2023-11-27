@@ -182,6 +182,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	display: flex;
 	flex-direction: column;
 }
+.menu__dish_stop {
+	pointer-events: none;
+	opacity: 0.5;
+}
 .dish {
 }
 .dish__foto {
@@ -211,7 +215,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	margin: 0 0 20px 0;
 }
 .dish__button {
-	width: 126px;
+	width: 140px;
 	
 }
 .dish__btn {

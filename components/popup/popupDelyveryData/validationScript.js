@@ -96,3 +96,130 @@ let error = (e, bool) => {
     return false;
   }
 }
+
+
+// * Создаем ссылку в яндекс такси
+let creatingLinkYandexTaxi = () => {
+  let termsDeliveryPlaceDelivery = document.querySelector('.block__termsDelivery');
+  let input = termsDeliveryPlaceDelivery.querySelector('input[name=street').value;
+      function init(ymaps) {
+        var myGeocoder = ymaps.geocode(`Екатеринбург, ${input}`);
+        myGeocoder.then(function (res) {
+            var firstGeoObject = res.geoObjects.get(0),
+               coords = firstGeoObject.geometry.getCoordinates();
+                // debugger
+
+            // dataClient.street = `<a href="https://3.redirect.appmetrica.yandex.com/route?start-lat=56.812374&start-lon=60.603052&end-lat=${coords[0]}&end-lon=${coords[1]}&level=express&appmetrica_tracking_id=1178268795219780156&lang=ru">${street}</a>`
+
+        });
+    }
+    ymaps.ready(init);
+}
+let termsDeliveryPlaceDelivery = document.querySelector('.block__termsDelivery');
+let input = termsDeliveryPlaceDelivery.querySelector('input[name=street');
+input.onblur = () => {creatingLinkYandexTaxi()}
+
+//* Создаем подсказки при вводе адреса
+
+// ymaps.ready(init);
+// function init() {
+//   // Подключаем поисковые подсказки к полю ввода.
+//   let termsDeliveryPlaceDelivery = document.querySelector('.block__termsDelivery');
+//   let input = termsDeliveryPlaceDelivery.querySelector('input[name=street');
+//     var suggestView = new ymaps.SuggestView(input),
+//         map,
+//         placemark;
+
+//     // При клике по кнопке запускаем верификацию введёных данных.
+//     // $('#button').bind('click', function (e) {
+//     //     geocode();
+//     // });
+
+//     function geocode() {
+//         // Забираем запрос из поля ввода.
+//         var request = input.value();
+//         // Геокодируем введённые данные.
+//         ymaps.geocode(request).then(function (res) {
+//             var obj = res.geoObjects.get(0),
+//                 error, hint;
+
+//             if (obj) {
+//                 // Об оценке точности ответа геокодера можно прочитать тут: https://tech.yandex.ru/maps/doc/geocoder/desc/reference/precision-docpage/
+//                 switch (obj.properties.get('metaDataProperty.GeocoderMetaData.precision')) {
+//                     case 'exact':
+//                         break;
+//                     case 'number':
+//                     case 'near':
+//                     case 'range':
+//                         error = 'Неточный адрес, требуется уточнение';
+//                         hint = 'Уточните номер дома';
+//                         break;
+//                     case 'street':
+//                         error = 'Неполный адрес, требуется уточнение';
+//                         hint = 'Уточните номер дома';
+//                         break;
+//                     case 'other':
+//                     default:
+//                         error = 'Неточный адрес, требуется уточнение';
+//                         hint = 'Уточните адрес';
+//                 }
+//             } else {
+//                 error = 'Адрес не найден';
+//                 hint = 'Уточните адрес';
+//             }
+
+//             // Если геокодер возвращает пустой массив или неточный результат, то показываем ошибку.
+//             if (error) {
+//                 showError(error);
+//                 showMessage(hint);
+//             } else {
+//                 showResult(obj);
+//             }
+//         }, function (e) {
+//             console.log(e)
+//         })
+
+//     }
+//     function showResult(obj) {
+//         // Удаляем сообщение об ошибке, если найденный адрес совпадает с поисковым запросом.
+//         $('#suggest').removeClass('input_error');
+//         $('#notice').css('display', 'none');
+
+//         var mapContainer = $('#map'),
+//             bounds = obj.properties.get('boundedBy'),
+//         // Рассчитываем видимую область для текущего положения пользователя.
+//             mapState = ymaps.util.bounds.getCenterAndZoom(
+//                 bounds,
+//                 [mapContainer.width(), mapContainer.height()]
+//             ),
+//         // Сохраняем полный адрес для сообщения под картой.
+//             address = [obj.getCountry(), obj.getAddressLine()].join(', '),
+//         // Сохраняем укороченный адрес для подписи метки.
+//             shortAddress = [obj.getThoroughfare(), obj.getPremiseNumber(), obj.getPremise()].join(' ');
+//         // Убираем контролы с карты.
+//         mapState.controls = [];
+//         // Создаём карту.
+//         createMap(mapState, shortAddress);
+//         // Выводим сообщение под картой.
+//         showMessage(address);
+//     }
+
+//     function showError(message) {
+//         $('#notice').text(message);
+//         $('#suggest').addClass('input_error');
+//         $('#notice').css('display', 'block');
+//         // Удаляем карту.
+//         if (map) {
+//             map.destroy();
+//             map = null;
+//         }
+//     }
+
+
+
+//     function showMessage(message) {
+//         $('#messageHeader').text('Данные получены:');
+//         $('#message').text(message);
+//     }
+// }
+// init()

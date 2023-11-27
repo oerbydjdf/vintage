@@ -31,10 +31,11 @@ export let insertAmountIntoBasket = (amount) => {
     let basketProductAmount = document.querySelector('.basket__productAmount');
     let shippingCostTotal = document.querySelector('.shippingCost__total');
     let deliveryBasketDelivery = document.querySelector('.deliveryBasket__delivery')
+    let taxiFare = document.querySelector('.taxi__fare').innerHTML;
     if(deliveryBasketDelivery.classList.contains('deliveryBasket__btn_active')) {
 
-        basketProductAmount.innerHTML = amount + 350;
-        shippingCostTotal.innerHTML = amount + 350;
+        basketProductAmount.innerHTML = amount + +taxiFare;
+        shippingCostTotal.innerHTML = amount + +taxiFare;
         return;
     }
     basketProductAmount.innerHTML = amount;

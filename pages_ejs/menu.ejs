@@ -5,7 +5,8 @@
 
     <% let arrCategory=['Холодные закуски', 'Салаты' , 'Горячие закуски' , 'Супы' , 'Рыба и море продукты'
         , 'Блюда на углях мясные' , 'Мясные блюда' , 'На компанию' , 'Гарниры' , 'Пасты и пельмени' , 'Соуса' , 'Блины'
-        , 'Пицца' , 'Закуски к пиву' , 'Десерты' , 'Напитки' , "Поминальный обед" ]; %>
+        , 'Пицца' , 'Закуски к пиву' , 'Десерты' , 'Напитки' , "Поминальный обед" ];
+        let btnText = '+ Добавить' %>
 
         <body>
             <header hidden class="header">
@@ -51,38 +52,44 @@
                             <div class="menu__price">
                                 <% results.forEach(e=> { %>
                                     <% if (e.CATEGORY==elem ) { %>
-                                        <div class="menu__dish dish">
-
-                                            <% if (e.IMAGES=='' ) { %> <img class="dish__foto"
-                                                    data-src="/menuImg/food.gif" alt="">
-                                                <% } else { %> <img class="dish__foto" data-src="<%= e.IMAGES%>" alt="">
-                                                    <% } %>
-                                                        <div class="dish__rate">
-                                                            <div class="dish__ratePrice">
-                                                                <%= e.PRICE%>
-                                                            </div>
-                                                            <div class="product__icon icon-rubles"></div>
-                                                        </div>
-                                                        <div class="dish__name">
-                                                            <%= e['NAME/CODE']%>
-                                                        </div>
-                                                        <div class="dish__weight">
-                                                            <%= e.WEIGHT%> гр
-                                                        </div>
-                                                        <div class="dish__button">
-                                                            <button class="dish__btn"> + Добавить</button>
-                                                            <div class="btn__quantity_none">
-                                                                <div class="btn__minus">-</div>
-                                                                <div class="btn__num">0</div>
-                                                                <div class="btn__plus">+</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="dish__options">
-                                                            <%= e.OPTIONS%>
-                                                        </div>
-                                                        <div class="dish__compositionDish">
-                                                            <%- e.DESCRIPTION%>
-                                                        </div>
+                                        <div <% if (e.STOPLIST=="да" ) { %>
+                                            class="menu__dish menu__dish_stop dish">
+                                            <%btnText = 'Будет позже'%>
+                                            <% } else { %>
+                                                class="menu__dish dish">
+                                                <%btnText = '+ Добавить'%>
+                                                <%} %>
+                                                    <% if (e.IMAGES=='' ) { %> <img class="dish__foto"
+                                                            data-src="/menuImg/food.gif" alt="">
+                                                        <% } else { %> <img class="dish__foto" data-src="<%= e.IMAGES%>"
+                                                                alt="">
+                                                            <% } %>
+                                                                <div class="dish__rate">
+                                                                    <div class="dish__ratePrice">
+                                                                        <%= e.PRICE%>
+                                                                    </div>
+                                                                    <div class="product__icon icon-rubles"></div>
+                                                                </div>
+                                                                <div class="dish__name">
+                                                                    <%= e['NAME/CODE']%>
+                                                                </div>
+                                                                <div class="dish__weight">
+                                                                    <%= e.WEIGHT%> гр
+                                                                </div>
+                                                                <div class="dish__button">
+                                                                    <button class="dish__btn"><%= btnText%></button>
+                                                                    <div class="btn__quantity_none">
+                                                                        <div class="btn__minus">-</div>
+                                                                        <div class="btn__num">0</div>
+                                                                        <div class="btn__plus">+</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dish__options">
+                                                                    <%= e.OPTIONS%>
+                                                                </div>
+                                                                <div class="dish__compositionDish">
+                                                                    <%- e.DESCRIPTION%>
+                                                                </div>
                                         </div>
                                         <% } %>
                                             <% }); %>
@@ -108,26 +115,27 @@
                                     <%- include('../components/footer/footer') %>
 
 
-                                    
-                                    <script src="https://api-maps.yandex.ru/2.1?apikey=78c472f9-5667-4eca-a308-42b6008078c2&lang=ru_RU"></script>
-        <script type="module" src="/scriptMenu.js"></script>
-        <script type="module" src="/helpersScript/removingSpaces.js"></script>
-        <script type="module" src="/scriptaddBtn.js"></script>
-        <script type="module" src="/scriptAddCart.js"></script>
-        <script type="module" src="/basketScript.js"></script>
-        <script type="module"
-            src="/popup/popupDelyveryData/makingOrderScript.js"></script>
-        <script type="module" src="/orderDataCollectionScript.js"></script>
-        <script type="module" src="/popup/popupModal/modal.js"></script>
-        <script type="module" src="/popup/popupComposDishes/composDishes.js"></script>
-        <script type="module" src="/popup/popupDeliveryTime/delyveryTime.js"></script>
-        <script type="module" src="/popup/popupFormPayment/formPayment.js"></script>
-        <script type="module"
-            src="/popup/popupDelyveryData/validationScript.js"></script>
-        <script type="module" src="/info/info.js"></script>
-        <script type="module" src="/lazyPhotoUpload.js"></script>
-        <script type="module" src="/mobileMenu.js"></script>
-        <script src="/script.js"></script>
+
+                                        <script
+                                            src="https://api-maps.yandex.ru/2.1?apikey=78c472f9-5667-4eca-a308-42b6008078c2&lang=ru_RU"></script>
+                                        <script type="module" src="/scriptMenu.js"></script>
+                                        <script type="module" src="/helpersScript/removingSpaces.js"></script>
+                                        <script type="module" src="/scriptaddBtn.js"></script>
+                                        <script type="module" src="/scriptAddCart.js"></script>
+                                        <script type="module" src="/basketScript.js"></script>
+                                        <script type="module"
+                                            src="/popup/popupDelyveryData/makingOrderScript.js"></script>
+                                        <script type="module" src="/orderDataCollectionScript.js"></script>
+                                        <script type="module" src="/popup/popupModal/modal.js"></script>
+                                        <script type="module" src="/popup/popupComposDishes/composDishes.js"></script>
+                                        <script type="module" src="/popup/popupDeliveryTime/delyveryTime.js"></script>
+                                        <script type="module" src="/popup/popupFormPayment/formPayment.js"></script>
+                                        <script type="module"
+                                            src="/popup/popupDelyveryData/validationScript.js"></script>
+                                        <script type="module" src="/info/info.js"></script>
+                                        <script type="module" src="/lazyPhotoUpload.js"></script>
+                                        <script type="module" src="/mobileMenu.js"></script>
+                                        <script src="/script.js"></script>
 
         </body>
 
