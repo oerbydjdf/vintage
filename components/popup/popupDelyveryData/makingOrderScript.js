@@ -8,6 +8,9 @@ import { togleChoiceDeliveryTime, definingСurrentTimeCurrentDay, handlerDeliver
 import { clickFormPayment, receiveOrderAmount } from '../popupFormPayment/formPayment.js';
 import { settingFocus, validation } from './validationScript.js';
 import { handlerClickPopupOptions } from '../popupComposDishes/composDishes.js';
+import { checkingStopList } from '../../checkingStopList.js';
+import { launchingProgram } from '../../../checkingStopList.js';
+import { loaderTogl } from '../../loaders/loaders.js';
 
 // *Вешаем обработчик события на кнопку в корзине
 let handlerMakingOrder = () => {
@@ -54,7 +57,8 @@ let handlerBack = () => {
         document.querySelector('.amountToBePaid__totalAmountName').innerHTML = 'Оформляем, к оплате';
         movingBasketToMenu();
         deleteDataAtribute();
-        handlerClickPopupOptions();    
+        handlerClickPopupOptions();
+        loaderTogl(false)    
         document.body.style.overflow = "";
     }
 }
@@ -247,14 +251,31 @@ let showingBlockBasket = () => {
 // * Вешаем обработчик на кнопку "amountToBePaid__totalAmount" оплаты
 let handlerToPay = () => {
     let amountToBePaidTotalAmount = document.querySelector('.amountToBePaid__totalAmount');
-    amountToBePaidTotalAmount.onclick = () => {
-        // clickFormPayment();
-        if(!validation()) {
+    amountToBePaidTotalAmount.onclick = async () => {
+        disBtn(amountToBePaidTotalAmount)
+        loaderTogl(true);
+        let stopList = await checkingStopList();
+        loaderTogl(false);
+        disBtn(amountToBePaidTotalAmount)
+        if(!validation() && stopList.length == 0) {
+            loaderTogl(true);
+            disBtn(amountToBePaidTotalAmount)
             wrapperForFunctions();
             receiveOrderAmount();
             clickFormPayment();
+            setTimeout(() => {loaderTogl(false); disBtn(amountToBePaidTotalAmount)}, 7000)
+        } else if (!validation() == false && stopList.length !== 0) {
+            document.querySelector('.popup__deliveryData_active').scrollTop = 0;
+        } else if  (!validation() == true && stopList.length !== 0){
+            loaderTogl(true);
+            launchingProgram(stopList);
         } else {
             document.querySelector('.popup__deliveryData_active').scrollTop = 0;
         }
     }
+}
+
+// * Делаем кнопку оплаты не активной
+export let disBtn = (btnSelect) => {
+    btnSelect.classList.toggle('menu__dish_stop')
 }

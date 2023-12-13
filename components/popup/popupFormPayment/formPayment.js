@@ -18,7 +18,7 @@ export let receiveOrderAmount = () => {
     let emailBank = formPaymetn.querySelector('input[name=email]');
     let receiptBank = formPaymetn.querySelector('input[name=receipt]');
     let taxiFare = (dataClient.taxiFare == '0') ? '00': +dataClient.taxiFare * 100 // доставка
-    
+
     amountBank.value = +dataClient.shippingCostTotal;
     nameBank.value = dataClient.nameUser;
     phoneBank.value = dataClient.phone;
@@ -55,6 +55,8 @@ export let receiveOrderAmount = () => {
         "EmailCompany": "2512372@mail.ru",
         "Taxation": "usn_income_outcome",
         "Items": [...productReceipt, deliveryPriceReceipt],
+        
     });
+
 }
 

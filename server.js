@@ -13,6 +13,7 @@ const routStocks = require('./routers/routStocks');
 const routMemorialDinner = require('./routers/routMemorialDinner');
 const routOffer = require('./routers/routOffer');
 const routContacts = require('./routers/routContacts');
+const routStoplist = require('./routers/routStoplist');
 const morgan = require('morgan');
 
 
@@ -98,3 +99,4 @@ app.use(routStocks);
 app.use(routMemorialDinner);
 app.use(routOffer);
 app.use(routContacts);
+app.use(routStoplist);

@@ -7,6 +7,7 @@
 @import url("banketStyle.css");
 @import url("styleContacts.css");
 @import url("styleBar.css");
+@import url("loaders.css");
 /*Обнуление*/
 *{
 	padding: 0;

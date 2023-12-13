@@ -69,10 +69,10 @@
 
 
 
-.popup__clear {
+.popup__clear, .popup__stopList {
     display: none;
 }
-.popup__clear_active {
+.popup__clear_active, .popup__stopList_active {
     display: block;
     font-family: 'MontserratSemiBold';
     background-color: white;

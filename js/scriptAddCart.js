@@ -8,6 +8,9 @@ import { clearBasket } from "/popup/popupClear/clear.js";
 
 export let basket = [];
 
+// * Перезписываем корзину
+export let overwritingTrash = (newBasket) => {basket = newBasket}
+
 function ObgDish(name, options, quantity, amount, foto, weight, takeawayDiscount = 0,) {
     this.name = name;
     this.options = options;
@@ -60,13 +63,10 @@ export let getSelectedOptions = (e) => {
     arrNameOptions = [];
     e.forEach((elem, i) => {
          if(elem.checked) {
-            //  arrNameOptions.push(optionName[i].innerHTML);
              arrNameOptions.push({optionName: optionName[i].innerHTML, optionPrice: +optionPrice[i].innerHTML});
-            //  console.log({optionName: optionName[i].innerHTML, optionPrice: +optionPrice[i].innerHTML});
          }
         });
 }
-//  {getSelectedOptions}
 
 // *Отправляем обьект блюда в массив если его нет или изменяем его опции при его наличии
 let addingToCart = (obj, target = 'popup') => {
@@ -74,12 +74,10 @@ let addingToCart = (obj, target = 'popup') => {
 
     if(objIndex === -1) {
         basket.push(obj);
-        // console.log(basket)
 
     }  else if(target == 'popup') {
         basket[objIndex].quantity += +obj.quantity;
         basket[objIndex].amount = +obj.amount + +basket[objIndex].amount;
-        // console.log(basket)
 
 
     } else {
@@ -88,14 +86,11 @@ let addingToCart = (obj, target = 'popup') => {
         basket[objIndex].quantity += +obj.quantity;
         basket[objIndex].amount = (+basket[objIndex].amount / quantityNow) * +quantityAfter;
         removingDishArr(basket[objIndex].quantity, objIndex)
-        // console.log(basket)
     }
     
     showHideCart(basket);
     insertAmountIntoBasket(countingAmount(basket));
-    // countingAmount(basket);
     fillingBasket(basket);
-    // console.log(basket)
     
 }
 
@@ -115,10 +110,9 @@ let compareOptions = (item, obj) => {
 }
 
 // *Удаляем блюдо из массива если количество ноль
-let removingDishArr = (quantity, i) => {
+export let removingDishArr = (quantity, i) => {
     if(quantity != 0) return;
     basket.splice(i, 1);
-    // console.log(basket)
 }
 
 // * Очищаем корзину
@@ -136,13 +130,10 @@ export let considerDiscount = (elem) => {
 // * Изменяем количество конкретного товара в 'basket' кнопками + или - находящимися внутри корзины
 export let changingQuantityGoodsBasket = (index, num) => {
     basket[index].quantity = basket[index].quantity + num;
-    // changingQuantityProductButtCart(basket[index].quantity, index);
-    changingQuantityGoodsMenu(basket, index, num)
-    // console.log(basket[index])
-    recalculatingOrderAmount(basket, num, index)
-    removingDishArr(basket[index].quantity, index)
+    changingQuantityGoodsMenu(basket, index, num);
+    recalculatingOrderAmount(basket, num, index);
+    removingDishArr(basket[index].quantity, index);
     insertAmountIntoBasket(countingAmount(basket));
-    // fillingBasket(basket);
     if(basket.length == 0) clearBasket();
 }
 

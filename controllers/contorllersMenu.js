@@ -41,7 +41,6 @@ const getMenu = (req, res) => {
     .pipe(csv({ separator: ',' }))
     .on('data', (data) =>  results.push(data))
     .on('end', () => {
-        // console.log(results)
         res.render(createPath('menu'), {results, urlStyle: '/style.css', info, metateg});
         return;
     });

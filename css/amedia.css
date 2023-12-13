@@ -311,7 +311,7 @@
     .shippingCost__blockDiscount_active {
         flex-direction: column;
     }
-    .popup__clear_active {
+    .popup__clear_active, .popup__stopList_active {
         width: 350px;
         display: flex;
         flex-direction: column;
@@ -450,7 +450,7 @@
     .shippingCost__block {
         font-size: 13px;
     }
-    .popup__clear_active {
+    .popup__clear_active, .popup__stopList_active {
         width: 300px;
     }
     .clear__cancellation {

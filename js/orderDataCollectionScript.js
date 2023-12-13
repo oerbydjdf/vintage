@@ -1,5 +1,6 @@
 'use strict'
 
+import { createPasRequest } from "./helpersScript/createPasRequest.js";
 import { basket } from "./scriptAddCart.js";
 
 
@@ -36,8 +37,6 @@ export let wrapperForFunctions = () => {
     customerAndOrderData.order = basket;
     customerAndOrderData.orderNumber = generatingOrderNumber();
     weSendOrderData(customerAndOrderData);
-    // creatingLinkYandexTaxi();
-    // console.log(dataClient.street)
 
 }
 
@@ -61,9 +60,7 @@ let collectsCustomerData = (dataClient) => {
 
 // * Отправляем данные заказа
 let weSendOrderData = async (data) => {
-    let string = document.URL.split('/');
-    string.splice(-1, 1, 'order');
-    let url = string.join('/');
+    let url = createPasRequest('order');
     let response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -73,7 +70,6 @@ let weSendOrderData = async (data) => {
 
     });
     let result = await response.json();
-    // console.log(result)
     return;
 }
 

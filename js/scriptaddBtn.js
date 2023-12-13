@@ -93,7 +93,6 @@ let changingQuantityProductPopup = () => {
     let btnNum = btnAdd.querySelector('.btn__num');
     btnAdd.onclick = (event) => {
         changingQuantityProduct(event);
-        // console.log(btnNum)
         if(btnNum.innerHTML < 1) btnNum.innerHTML = 1;
     }
 }
@@ -151,15 +150,11 @@ let changingAmountGoods = (targ) => {
     let btnNum = popupBtn.querySelector('.btn__num');
     let popupRate = popupBtn.querySelector('.popup__rate');
     if(targ.className === 'btn__plus') {
-        // popupRate.innerHTML = +popupRate.innerHTML * +btnNum.innerHTML
         popupRate.innerHTML = (+popupRate.innerHTML / (+btnNum.innerHTML - 1)) * +btnNum.innerHTML;
-        // console.log('plus' + ' ' + btnNum.innerHTML)
     }
     if(targ.className === 'btn__minus') {
-        // popupRate.innerHTML = +popupRate.innerHTML / (+btnNum.innerHTML + 1)
         if(btnNum.innerHTML == 0) return;
         popupRate.innerHTML = (+popupRate.innerHTML / (+btnNum.innerHTML + 1)) * +btnNum.innerHTML;
-        // console.log('minus' + ' ' + btnNum.innerHTML)
     }
 
 }

@@ -27,6 +27,8 @@ export let countingAmount = (arrCart) => {
 }
 
 // *Вставляет сумму заказа в корзину
+let taxiFare = document.querySelector('.taxi__fare');
+let taxiFarePrice = taxiFare.innerHTML;
 export let insertAmountIntoBasket = (amount) => {
     let basketProductAmount = document.querySelector('.basket__productAmount');
     let shippingCostTotal = document.querySelector('.shippingCost__total');
@@ -34,8 +36,8 @@ export let insertAmountIntoBasket = (amount) => {
     let taxiFare = document.querySelector('.taxi__fare').innerHTML;
     if(deliveryBasketDelivery.classList.contains('deliveryBasket__btn_active')) {
 
-        basketProductAmount.innerHTML = amount + +taxiFare;
-        shippingCostTotal.innerHTML = amount + +taxiFare;
+        basketProductAmount.innerHTML = amount + +taxiFarePrice;
+        shippingCostTotal.innerHTML = amount + +taxiFarePrice;
         return;
     }
     basketProductAmount.innerHTML = amount;
@@ -157,13 +159,11 @@ let changingColor = (elem) => {
 let changeCostDelivery = () => {
     let btnActive = document.querySelector('.deliveryBasket__btn_active');
     let taxiFare = document.querySelector('.taxi__fare');
-    let discountNum = document.querySelector('.discount__num');
-    btnActive.innerHTML == 'На вынос' ? taxiFare.innerHTML = 0: taxiFare.innerHTML = 350;
+    btnActive.innerHTML == 'На вынос' ? taxiFare.innerHTML = 0: taxiFare.innerHTML = taxiFarePrice;
     if(btnActive.innerHTML == 'На вынос') {
         taxiFare.innerHTML = 0;
     } else {
-        discountNum.innerHTML = 0;
-        taxiFare.innerHTML = 350;
+        taxiFare.innerHTML = taxiFarePrice;
     }
 }
 // * Показываем блок со скидкой при нажатии кнопки на вынос
@@ -224,7 +224,7 @@ let amountParticularDishBasket = (elem, one) => {
 
 
 // * Скрываем товар из корзины если количество ноль
-let hidingProductBasket = (num ,index) => {
+export let hidingProductBasket = (num ,index) => {
     if(num == 0) {
         let basketProductsContainer = Array.from(document.getElementsByClassName('basketProducts__container'));
         basketProductsContainer[index].remove();

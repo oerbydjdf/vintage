@@ -16,6 +16,7 @@ const postOrder = (req, res) => {
     let mailOptions = {
         from: '"Кафе Винтаж" <2512372@mail.ru>', // sender address
         to: `${req.body.client.email}, vintage65@yandex.ru`, // list of receivers
+        // to: `${req.body.client.email},`, // list of receivers
         subject: 'Доставка кафе Винтаже', // Subject line
         text: '', // plain text body
         html: createsHtmlOrderData(req.body) // html body
@@ -25,7 +26,6 @@ const postOrder = (req, res) => {
         if (error) {
             return console.log(error);
         }
-        // console.log('Message %s sent: %s', info.messageId, info.response);
             
         });
     

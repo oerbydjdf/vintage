@@ -24,7 +24,8 @@ let handlerClickPopup = () => {
     let popup = document.querySelector('.popup');
     popup.onclick = (e) => {
         let popupClearActive = document.querySelector('.popup__clear_active');
-        if(popupClearActive !== null) return;
+        let popupStopListActive = document.querySelector('.popup__stopList_active');
+        if(popupClearActive !== null || popupStopListActive !== null) return;
         hidingPopupWindow();
         hidingTcontentsBasket();
         hidingPopupComposDishes();
