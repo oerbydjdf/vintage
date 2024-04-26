@@ -14,6 +14,11 @@ const routMemorialDinner = require('./routers/routMemorialDinner');
 const routOffer = require('./routers/routOffer');
 const routContacts = require('./routers/routContacts');
 const routStoplist = require('./routers/routStoplist');
+const routLogin = require('./routers/routLogin');
+const routCheckingData = require('./routers/routCheckingData');
+const routAdmin = require('./routers/routAdmin');
+const routNewstoplist = require('./routers/routNewstoplist');
+const routPriceComposition = require('./routers/routPriceComposition');
 const morgan = require('morgan');
 
 
@@ -100,3 +105,8 @@ app.use(routMemorialDinner);
 app.use(routOffer);
 app.use(routContacts);
 app.use(routStoplist);
+app.use(routLogin);
+app.use(routCheckingData);
+app.use(routAdmin);
+app.use(routNewstoplist);
+app.use(routPriceComposition);

@@ -8,6 +8,7 @@
 @import url("styleContacts.css");
 @import url("styleBar.css");
 @import url("loaders.css");
+@import url("adminIndex.css");
 /*Обнуление*/
 *{
 	padding: 0;

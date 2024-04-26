@@ -3,5 +3,4 @@ export let createPasRequest = (urlReq) => {
     string.splice(-1, 1, urlReq);
     let url = string.join('/');
     return url;
-
 }

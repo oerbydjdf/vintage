@@ -1,0 +1,51 @@
+
+<div class="popupAdvertisement">
+
+    <div class="popupAdvertisement__text">
+        <h3>
+                Объявление.
+        </h3>
+        <br>
+        <div class="popupAdvertisement__textInfo">
+            <p style="text-align: center;">4 марта.</p>
+            <p >
+             <br> В нашем доме отключат электроэнергию. <br>
+                В этот день кафе работать не будет.
+            </p>
+        </div>
+       
+    </div>
+</div>
+
+<style>
+    .popupAdvertisement  {
+    display: none;
+}
+
+.popupAdvertisement__active {
+    display: block;
+    max-width: 700px;
+    height: 300px;
+    background-color: white;
+    font-family: MontserratRegular;
+    position: absolute;
+    padding: 20px 25px;
+    border-radius: 15px;
+    z-index: 2;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'MontserratSemiBold';
+    text-align: center;
+}
+.popupAdvertisement__textInfo {
+    font-family: MontserratSemiBoldr;
+    font-size: 23px;
+    line-height: 1;
+    color: #433d3d;
+}
+</style>

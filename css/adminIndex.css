@@ -1,0 +1,126 @@
+.menu__stopList_none {
+    display: none;
+}
+.stoplist {
+}
+.stoplist__title {
+    font-family: 'MontserratSemiBold';
+    font-size: 30px;
+    margin: 0 0 20px 0;
+}
+.stoplist__num {
+    font-size: 15px;
+    color: rgb(231, 71, 71);
+}
+.stoplist__dishes {
+    background-color: #e7e7e7;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+    width: 475px;
+}
+.dishes {
+}
+.dishes__category {
+    border-bottom: 1px solid;
+}
+.category {
+}
+.category__management {
+    display: flex;
+    width: 405px;
+    justify-content: space-between;
+    padding: 15px 15px 15px 10px;
+    cursor: pointer;
+}
+.category__name {
+    font-family: 'MontserratSemiBold';
+    font-size: 20px;
+    display: flex;
+    gap: 0 20px;
+}
+.categori__quantStop {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    padding: 2px 0 0 6px;
+    font-size: 16px;
+    color: red;
+}
+.category__arow {
+}
+.category__btn {
+}
+.category__listDishes {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.listDishes {
+}
+.listDishes__foto {
+    width: 80px;
+    height: 65px;
+    border-radius: 10px;
+}
+.listDishes__management {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+.listDishes__managementMenu {
+    cursor: pointer;
+}
+
+.listDishes__check {
+    display: flex;
+    padding: 5px 10px;
+    width: 307px;
+    gap: 0 10px;
+}
+.listDishes__dishesName {
+    font-family: MontserratSemiBoldr;
+    font-size: 20px;
+    color: #433d3d;
+}
+.listDishes__stop {
+    display: none;
+}
+.listDishes__stop_active {
+    display: block;
+    font-family: MontserratRegular;
+    font-size: 17px;
+    color: #433d3d;
+    padding: 5px 10px;
+
+}
+
+.stoplis__button {
+    font-family: 'MontserratSemiBold';
+    position: fixed;
+    bottom: 0px;
+    z-index: 5;
+    width: 100%;
+    height: 50px;
+    background-color: #F5F4F2;
+    padding: 8px;
+}
+.stopBtn {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+}
+.but__cancell {
+    background-color:rgb(187 187 187);
+    margin: 0 15px 0 0;
+}
+.but__save {
+    background-color: chartreuse;
+}
+.listDishes__structure, .listDishes__price, .dish__weight_none{
+    display: none;
+}
+.popup__input {
+    max-width: 40px;
+}

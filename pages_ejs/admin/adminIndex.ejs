@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<%=urlStyle%>>
+    <title>Админ панель</title>
+</head>
+
+<% let arrCategory=['Холодные закуски', 'Салаты' , 'Горячие закуски' , 'Супы' , 'Рыба и море продукты'
+, 'Блюда на углях мясные' , 'Мясные блюда' ,'Отбивные из мяса', 'На компанию' , 'Гарниры' , 'Пасты и пельмени' , 'Соуса' , 'Блины'
+, 'Пицца' , 'Закуски к пиву' , 'Десерты' , 'Напитки' , "Поминальный обед"]; %>
+
+<body>
+    <main class="menu">
+        <div class="menu__block">
+            <div class="menu__navigation">
+                <div class="menu__styci scrollStyle">
+                    <div class="menu__title">Меню</div>
+                    <ul class="menu__list">
+                        <li class="menu__item"><a class="menu__link">Стоп лист</a></li>
+                        <li class="menu__item"><a class="menu__link">Меню</a></li>
+                        <!-- <% arrCategory.forEach(e=> { %>
+                            <li class="menu__item"><a class="menu__link" href="#<%=e %>">
+                                    <%=e %>
+                                </a></li>
+                            <%})%> -->
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="menu__stopList stoplist">
+                <div class="stoplist__title">
+                    <h2>Стоп лист</h2>
+                    <p class="stoplist__num"></p>
+                </div>
+                <div class="stoplist__dishes dishes">
+
+                    <% arrCategory.forEach((elem, index)=> { %>
+
+                        <div class="dishes__category category">
+                            <div class="category__management">
+                                <div class="category__name"><%=elem %> <p class="categori__quantStop"></p></div>
+                                <div class="category__arow">
+                                    <svg class="time__arow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 7 12"
+                                        fill="none">
+                                        <path d="M1 1.5L5.5 6L1 10.5" stroke="#21201F" stroke-width="1.5"
+                                            stroke-linecap="round"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="category__listDishes listDishes">
+
+                                <% results.forEach(e=> { %>
+                                    <% if (e.CATEGORY==elem ) { %>
+                                        
+                                        <% if (e.STOPLIST=="да" ) { %>
+                                            <div class="listDishes__management">
+                                                <div class="listDishes__check">
+                                                    <input class="inputStop" data-index="<%= index%>" type="checkbox" checked value="<%= e['NAME/CODE']%>">
+                                                    <div class="listDishes__dishesName"><%= e['NAME/CODE']%></div>
+                                                </div>
+                                                <div class="listDishes__stop listDishes__stop_active">Недоcтупно</div>
+                                            </div> 
+                                        
+                                            <%} else {%>
+                                                <div class="listDishes__management">
+                                                    <div class="listDishes__check">
+                                                        <input class="inputStop" data-index="<%= index%>" type="checkbox" value="<%= e['NAME/CODE']%>">
+                                                        <div class="listDishes__dishesName"><%= e['NAME/CODE']%></div>
+                                                    </div>
+                                                    <div class="listDishes__stop">Недоcтупно</div>
+                                                </div> 
+
+                                                 <%}%>
+                                        
+                                        <%}%>
+                                    
+                                    <%})%>
+                            </div>
+    
+                        </div>
+                         <%}) %>
+
+
+                        </div>
+                        <div class="stoplis__button but">
+                            <button disabled class="but__save stopBtn">Сохранить</button>
+                        </div>
+
+                
+
+            </div>
+
+
+            <%- include('./adminIndexMenu') %>
+        </div>
+
+    </main>
+    <script type="module" src="/adminScript/adminIndex.js"></script>
+    <script type="module" src="/adminScript/handlerScript.js"></script>
+    <script type="module" src="/adminScript/changingStopList.js"></script>
+    <script type="module" src="/adminScript/adminIndexMenu.js"></script>
+</body>
+</html>

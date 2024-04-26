@@ -18,7 +18,7 @@ export let countingAmount = (arrCart) => {
     arrCart.forEach(e => e.takeawayDiscount = 0)
     //* Делает скидку когда кнопка "На вынос" нажата и клиент добавляет новый товар
     if(deliveryBasketTakeaway.classList.contains('deliveryBasket__btn_active')) {
-        arrCart.forEach(e => e.takeawayDiscount = 15)
+        arrCart.forEach(e => e.takeawayDiscount = 10)
         let discount = arrCart.reduce((sum, item) => sum + +item.amountDiscount(), 0);
         insertingDiscount(discount);
         return (totalAmount - discount).toFixed(2);        

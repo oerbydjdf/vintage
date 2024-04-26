@@ -16,6 +16,7 @@ export let handlerClickPopupOptions = () => {
             disableChoiceDeliveryTime();
         }
     })
+    if(popupComposDishes === null) return
     popupComposDishes.onclick = (e) => e.stopPropagation();    
 }
 handlerClickPopupOptions();
