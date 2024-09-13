@@ -260,7 +260,13 @@ let handlerToPay = () => {
         if(!validation() && stopList.length == 0) {
             loaderTogl(true);
             disBtn(amountToBePaidTotalAmount)
-            wrapperForFunctions();
+            let res = await wrapperForFunctions();
+            if (res == 'error') {
+                alert('Нет связи, попробуйте еще раз');
+                 loaderTogl(false);
+                 disBtn(amountToBePaidTotalAmount);
+                 return
+                }
             receiveOrderAmount();
             clickFormPayment();
             setTimeout(() => {loaderTogl(false); disBtn(amountToBePaidTotalAmount)}, 7000)

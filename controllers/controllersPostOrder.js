@@ -16,7 +16,7 @@ const postOrder = (req, res) => {
     let mailOptions = {
         from: '"Кафе Винтаж" <2512372@mail.ru>', // sender address
         to: `${req.body.client.email}, vintage65@yandex.ru`, // list of receivers
-        // to: `${req.body.client.email},`, // list of receivers
+        // to: `${req.body.client.email}, v.shukin2013yandex`, // list of receivers
         subject: 'Доставка кафе Винтаже', // Subject line
         text: '', // plain text body
         html: createsHtmlOrderData(req.body) // html body
@@ -24,12 +24,13 @@ const postOrder = (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            return console.log(error);
+            return res.json('error');
         }
-            
-        });
+        
+    });
     
-        return res.json(req.body);
+    // return res.json('error');
+    return res.json(req.body);
 }
 
 module.exports = {postOrder}

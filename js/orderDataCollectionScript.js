@@ -1,5 +1,6 @@
 'use strict'
 
+import { delayedLoop, sendingData } from "./api/api.js";
 import { createPasRequest } from "./helpersScript/createPasRequest.js";
 import { basket } from "./scriptAddCart.js";
 
@@ -32,12 +33,12 @@ export let dataClient = {
 
 
 // * Обертка для функций собирающих данные
-export let wrapperForFunctions = () => {
+export let wrapperForFunctions = async () => {
     customerAndOrderData.client = collectsCustomerData(dataClient);
     customerAndOrderData.order = basket;
-    customerAndOrderData.orderNumber = generatingOrderNumber();
-    weSendOrderData(customerAndOrderData);
-
+    customerAndOrderData.orderNumber = generatingOrderNumber();    
+    let res = await delayedLoop(sendingData, customerAndOrderData,'/order','POST') // * Отправляет данные на сервер
+    return res
 }
 
 // * Собирает данные клиента для доставки
@@ -59,19 +60,18 @@ let collectsCustomerData = (dataClient) => {
 }
 
 // * Отправляем данные заказа
-let weSendOrderData = async (data) => {
-    let url = createPasRequest('order');
-    let response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data),
+// let weSendOrderData = async (data) => {
+//     let response = await fetch('/order', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json;charset=utf-8'
+//         },
+//         body: JSON.stringify(data),
 
-    });
-    let result = await response.json();
-    return;
-}
+//     });
+//     let result = await response.json();
+//     return result;
+// }
 
 // * Генерируем номер заказа
 let generatingOrderNumber = () => {
