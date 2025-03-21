@@ -1,3 +1,10 @@
+<%let priceTaxi = 0 %>
+<% results.forEach(e=> { %>
+    <% if (e.CATEGORY=='Доставка' ) { %> 
+        <%priceTaxi=e.PRICE%>
+         <% } %>
+    <% }); %>
+
 <div class="basketComposition">
     <div class="popup__close popup__close_center">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -24,7 +31,9 @@
             <img src="/menuImg/dostavka.png" alt="dostavka">
             <div class="shippingCost__name">Доставка</div>
             <div class="productPriceCommonUnit productPriceCommonUnit__green">
-                <div data-order="taxiFare" class="shippingCost__figures taxi__fare">400</div>
+                <div data-order="taxiFare" class="shippingCost__figures taxi__fare">
+                    <%= priceTaxi%>
+                </div>
                 <div class="product__icon icon-rubles"></div>
             </div>
 

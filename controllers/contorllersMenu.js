@@ -42,6 +42,7 @@ const getMenu = (req, res) => {
     .on('data', (data) =>  results.push(data))
     .on('end', () => {
         res.render(createPath('menu'), {results, urlStyle: '/style.css', info, metateg});
+        console.log(results)
         return;
     });
 }

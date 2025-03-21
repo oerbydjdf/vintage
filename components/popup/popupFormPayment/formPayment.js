@@ -34,7 +34,8 @@ export let receiveOrderAmount = () => {
                 "Amount": ((e.amount - +e.amountDiscount()) * 100).toFixed(0),
                 "PaymentMethod": "full_payment",
                 "PaymentObject": "commodity",
-                "Tax": "none"
+                "Tax": "none",
+                "MeasurementUnit": "pc"
             }
         )
     })
@@ -46,7 +47,8 @@ export let receiveOrderAmount = () => {
         "Amount": taxiFare,
         "PaymentMethod": "full_payment",
         "PaymentObject": "commodity",
-        "Tax": "none"
+        "Tax": "none",
+        "MeasurementUnit": "pc"
     }
 
     receiptBank.value = JSON.stringify({
